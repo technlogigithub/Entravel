@@ -8,7 +8,7 @@ interface CardProps{
 
 const Card:FC<CardProps> = ({ children, classNames }) => {
   return (
-    <div className={cn('p-9 bg-secondary-foreground rounded-md',  classNames ? classNames : '')}>{children}</div>
+    <div className={cn('p-8 bg-secondary-foreground rounded-lg',  classNames ? classNames : '')}>{children}</div>
   )
 }
 

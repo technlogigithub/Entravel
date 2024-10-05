@@ -1,0 +1,27 @@
+{
+    "images": [
+      [
+        { "src": "/paris.jpg", "alt": "paris", "title": "Paris" }
+      ],
+      [
+        { "src": "/London.jpg", "alt": "london", "title": "London" },
+        { "src": "/Amsterdam.jpg", "alt": "amsterdam", "title": "Amsterdam" }
+      ],
+      [
+        { "src": "/Barcelona.jpg", "alt": "Barcelona", "title": "Barcelona" },
+        { "src": "/London1.jpg", "alt": "London1", "title": "London1" }
+      ],
+      [
+        { "src": "/Berlin.jpg", "alt": "Berlin", "title": "Berlin" }
+      ],
+      [
+        { "src": "/Singapore.jpg", "alt": "Singapore", "title": "Singapore" },
+        { "src": "/Maldives.jpg", "alt": "Maldives", "title": "Maldives" }
+      ],
+      [
+        { "src": "/Barcelona.jpg", "alt": "Barcelona", "title": "Barcelona" },
+        { "src": "/London1.jpg", "alt": "London1", "title": "London1" }
+      ]
+    ]
+  }
+  

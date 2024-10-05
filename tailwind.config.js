@@ -24,7 +24,8 @@ export default {
   			},
   			secondary: {
   				DEFAULT: 'hsl(var(--secondary))',
-  				foreground: 'hsl(var(--secondary-foreground))'
+  				foreground: 'hsl(var(--secondary-foreground))',
+				extraLight: 'hsl(var(--secondary-extraLight))',
   			},
 			placeholder: {
 				DEFAULT: 'hsl(var(--placeholder))',
@@ -34,6 +35,7 @@ export default {
 			},
 			blue: {
 				DEFAULT: 'hsl(var(--blue))',
+				'50': 'hsl(var(--blue-50))',
 			},
 			green: {
 				DEFAULT: 'hsl(var(--green))',
@@ -58,6 +60,7 @@ export default {
 		  },
 		  backgroundImage: {
 			'hero-pattern': "url('/hero_img.jpg')",
+			'disocunt-bg': "url('/discount.jpg')",
 		  },
 		  screens:{
 			"3xl":"1920px"

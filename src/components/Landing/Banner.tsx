@@ -1,5 +1,4 @@
 import Location from "../BookingForm/Location";
-import { IconDiamond } from "../iocns/Icons";
 import { Button } from "../ui/button";
 
 const Banner = () => {
@@ -33,7 +32,7 @@ const Banner = () => {
         </div>
         <div className="absolute bottom-16 left-1/2 -translate-x-1/2">
         <Button size="lg" className="px-5 py-2 gap-2 bg-white/50 rounded-full">
-          <img src="/Travel_with.png" alt="diamond" /> Invite-Only Membership
+          <img src="/icons/Travel_with.png" alt="diamond" /> Invite-Only Membership
         </Button>
         </div>
       </div>
