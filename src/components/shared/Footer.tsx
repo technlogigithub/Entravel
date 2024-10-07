@@ -1,5 +1,4 @@
 
-import { url } from "inspector";
 import { IconCheckedCircle } from "../iocns/Icons";
 import { Link } from "react-router-dom";
 import { IconBrandDiscordFilled, IconBrandTelegram, IconBrandX } from "@tabler/icons-react";
@@ -64,7 +63,7 @@ const Footer = () => {
           </p>
         </div>
         {/* Right Section */}
-        <div className="flex gap-20">
+        <div className="flex gap-8 lg:gap-20">
             <ul>
                 {menuLinks.map((item) => (
                     <li key={item.id} className="pb-4 last:pb-0"><Link to={item.url} className="text-base font-medium hover:text-blue">{item.label}</Link></li>

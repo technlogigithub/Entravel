@@ -9,7 +9,7 @@ const BiggestDiscount = () => {
         <h3 className="max-w-xl">Destinations with the biggest discounts</h3>
         <Button size="lg">View all</Button>
       </div>
-      <div className="mt-10 grid grid-cols-6 gap-4 pl-3 w-[1600] xl:w-[1900px] 3xl:w-[2400px] relative">
+      <div className="mt-10 grid grid-cols-6 gap-4 pl-3 lg:w-[1180px] xl:w-[1570px] min-[1500px]:w-[1900px] 3xl:w-[2150px] relative">
       {imagesData.images.map((column:any, columnIndex:number) => (
         <div key={columnIndex} className="flex gap-4 flex-col relative ">
           {column.map((image:any, imageIndex:number) => (

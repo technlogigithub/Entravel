@@ -51,6 +51,10 @@ export default {
 			},
 			lightBorder: {
 				DEFAULT: 'hsl(var(--light-border))',
+			},
+			gray:{
+				DEFAULT: 'hsl(var(--gray))',
+				light: 'hsl(var(--gray-light))',
 			}
   			
   		},

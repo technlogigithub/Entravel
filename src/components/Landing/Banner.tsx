@@ -1,4 +1,3 @@
-import Location from "../BookingForm/Location";
 import { Button } from "../ui/button";
 
 const Banner = () => {
@@ -14,21 +13,11 @@ const Banner = () => {
             and save money
           </p>
 
-          <form>
+          {/* <form>
             <div className="flex bg-white max-w-[1067px] rounded-full py-4 relative px-10">
               <Location />
-
-              {/* <div className="flex  basis-2/4 gap-8">
-                <Input label="Check in" value="Wed, 10 Apr"/>
-                <Input label="Check out" value="Wed, 15 Apr"/>
-                <div>
-                <label className={`text-xs font-semibold text-gray-light uppercase`}>Guests</label>
-                <Button>dfdsfdsfd</Button>
-                </div>
-              </div>
-                <Button label="Search" icon={<FontAwesomeIcon icon={faMagnifyingGlass} className="basis-1/4 "/>}/> */}
             </div>
-          </form>
+          </form> */}
         </div>
         <div className="absolute bottom-16 left-1/2 -translate-x-1/2">
         <Button size="lg" className="px-5 py-2 gap-2 bg-white/50 rounded-full">

@@ -15,14 +15,15 @@ const Location = () => {
   );
   const [isDropdown, setIsDropdown] = useState(false);
 
-  const handleInputClick = () => {
-    setIsDropdown(true); // Open dropdown on input click
-  };
+  // const handleInputClick = () => {
+  //   setIsDropdown(true); // Open dropdown on input click
+  // };
 
-  const handleOptionClick = (location) => {
+  const handleOptionClick = (location:string) => {
     setLocationSearch(location); // Set clicked option to input value
     setIsDropdown(false); // Close the dropdown
   };
+  console.log(locationSearch);
   return (
     <>
       <div className="relative">

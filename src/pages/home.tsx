@@ -7,14 +7,14 @@ import MemberClub from "@/components/Landing/MemberClub";
 
 const Home = () => {
   return (
-    <div>
+    <>
       <Banner />
       <EfforlessBooking />
       <EntravelOffer/>
       <BiggestDiscount/>
       <MemberClub/>
       <Discount/>
-    </div>
+    </>
   );
 };
 
