@@ -2,6 +2,7 @@
 import { IconCheckedCircle } from "../iocns/Icons";
 import { Link } from "react-router-dom";
 import { IconBrandDiscordFilled, IconBrandTelegram, IconBrandX } from "@tabler/icons-react";
+import { cn } from "@/lib/utils";
 
 const menuLinks = [
     {
@@ -50,20 +51,23 @@ const socialLinks = [
         url: "/",
     }
 ]
-const Footer = () => {
+const Footer = ({isMobileHeader = true} : {isMobileHeader?: boolean}) => {
   return (
-    <div className="px-12 py-20">
+    <div className={cn(isMobileHeader ? "px-12 py-20" : "p-0")}>
       <div className="flex justify-between">
-        <div className="pr-4">
-          <Link to="/">
-            <IconCheckedCircle />
-          </Link>
-          <p className="pt-8 font-normal">
-            A truly revolutionary hotel booking concept.
-          </p>
-        </div>
+        {isMobileHeader && (
+            <div className="pr-4">
+            <Link to="/">
+              <IconCheckedCircle />
+            </Link>
+            <p className="pt-8 font-normal">
+              A truly revolutionary hotel booking concept.
+            </p>
+          </div>
+        )}
+        
         {/* Right Section */}
-        <div className="flex gap-8 lg:gap-20">
+        <div className={cn("gap-8 lg:gap-20", isMobileHeader ? "flex" : "grid")}>
             <ul>
                 {menuLinks.map((item) => (
                     <li key={item.id} className="pb-4 last:pb-0"><Link to={item.url} className="text-base font-medium hover:text-blue">{item.label}</Link></li>

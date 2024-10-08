@@ -1,3 +1,5 @@
+import { text } from 'stream/consumers';
+
 /** @type {import('tailwindcss').Config} */
 export default {
     darkMode: ["class"],
@@ -55,8 +57,11 @@ export default {
 			gray:{
 				DEFAULT: 'hsl(var(--gray))',
 				light: 'hsl(var(--gray-light))',
-			}
-  			
+				dark: 'hsl(var(--gray-dark))',
+			},
+  			text: {
+  				DEFAULT: 'hsl(var(--text-color))',
+  			},
   		},
 		  fontFamily: {
 			dmsans: ['DM Sans', 'sans-serif'], 

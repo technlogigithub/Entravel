@@ -25,6 +25,8 @@
     --radius: 0.5rem;
     --gray:240, 6%, 90%, 1;
     --gray-light:0, 0%, 97%, 1;
+    --gray-dark:0, 0%, 95%, 1;
+    --text-color:209, 4%, 45%, 1
   }
  
 }
@@ -70,6 +72,9 @@
 .shadow-two{
   backdrop-filter: blur(24.350746154785156px);
   box-shadow: 0px 4.87px 19.48px 0px rgba(0, 0, 0, 0.05);
+}
+.shadow-three{
+  box-shadow: 0px 2px 8px 0px rgba(23, 23, 35, 0.1);
 }
 .bg-overlay:before{
   @apply absolute top-0 left-0 right-0 bottom-0;
