@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { Button } from "../ui/button";
+import { Input } from "../ui/input";
+import { Label } from "../ui/label";
 
 const destinationOptions = [
   {
@@ -15,9 +17,9 @@ const Location = () => {
   );
   const [isDropdown, setIsDropdown] = useState(false);
 
-  // const handleInputClick = () => {
-  //   setIsDropdown(true); // Open dropdown on input click
-  // };
+  const handleInputClick = () => {
+    setIsDropdown(true); // Open dropdown on input click
+  };
 
   const handleOptionClick = (location:string) => {
     setLocationSearch(location); // Set clicked option to input value
@@ -27,14 +29,8 @@ const Location = () => {
   return (
     <>
       <div className="relative">
-        {/* <Input
-          label="Location"
-          type="text"
-          value={locationSearch}
-          onChange={(e) => setLocationSearch(e.target.value)}
-          onClick={handleInputClick}
-          labelClass="uppercase"
-        /> */}
+        <Label htmlFor="location" className="uppercase">Location</Label>
+        <Input value={locationSearch} onChange={(e) => setLocationSearch(e.target.value)} onClick={handleInputClick}/>
         {isDropdown && (
           <div className="absolute left-6 -bottom-[26px] z-10 size-0 border-x-[10px] border-b-[10px] border-transparent border-b-white"></div>
         )}

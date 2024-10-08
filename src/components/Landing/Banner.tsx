@@ -1,3 +1,4 @@
+import Location from "../BookingForm/Location";
 import { Button } from "../ui/button";
 
 const Banner = () => {
@@ -13,11 +14,11 @@ const Banner = () => {
             and save money
           </p>
 
-          {/* <form>
+          <form>
             <div className="flex bg-white max-w-[1067px] rounded-full py-4 relative px-10">
               <Location />
             </div>
-          </form> */}
+          </form>
         </div>
         <div className="absolute bottom-16 left-1/2 -translate-x-1/2 max-md:hidden">
           <Button
