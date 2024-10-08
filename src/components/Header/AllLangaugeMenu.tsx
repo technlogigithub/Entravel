@@ -103,7 +103,7 @@ const AllLangaugeMenu = ({isMobileMenu = false}: {isMobileMenu: boolean}) => {
               {currencies.map((langauge: langauge) => (
                 <li
                   key={langauge.name}
-                  className="basis-1/3 pr-3 last:pr-0 pb-4 last:pb-0"
+                  className="basis-full md:basis-1/3 pr-3 last:pr-0 pb-4 last:pb-0"
                 >
                   <Button
                     variant="link"

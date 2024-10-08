@@ -62,6 +62,9 @@ export default {
   			text: {
   				DEFAULT: 'hsl(var(--text-color))',
   			},
+			bgOne:{
+				DEFAULT: 'hsl(var(--bg-one))',
+			}
   		},
 		  fontFamily: {
 			dmsans: ['DM Sans', 'sans-serif'], 
@@ -70,6 +73,7 @@ export default {
 		  backgroundImage: {
 			'hero-pattern': "url('/hero_img.jpg')",
 			'disocunt-bg': "url('/discount.jpg')",
+			'disocunt-mobile-bg': "url('/mobile_saving.jpg')",
 		  },
 		  screens:{
 			"3xl":"1920px"

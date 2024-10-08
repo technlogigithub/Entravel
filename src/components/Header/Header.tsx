@@ -113,7 +113,7 @@ const Header = () => {
   return (
     <div>
       <div
-        className={`flex gap-4 fixed w-full h-20 px-6 md:px-10 lg:px-20 items-center justify-between top-0 z-30 transition-colors duration-300 ${
+        className={`flex gap-4 fixed w-full h-20 px-6 md:px-10 lg:px-20 items-center justify-between top-0 z-30 transition-colors duration-300 max-md:border-b max-md:border-gray-400 ${
           scrolled ? "bg-white shadow-lg" : "bg-transparent"
         }`}
       >
@@ -121,7 +121,7 @@ const Header = () => {
           <IconCheckedCircle />
         </Link>
 
-        <ul className="hidden sm:flex gap-5 items-center">
+        <ul className="hidden md:flex gap-5 items-center">
           <li>
             <AllLanguagesDialog />
           </li>
@@ -160,7 +160,7 @@ const Header = () => {
             )}
           </li>
         </ul>
-        <Button onClick={handleOpenMenu} variant="link" className="sm:hidden">
+        <Button onClick={handleOpenMenu} variant="link" className="md:hidden">
           <IconMenu2 className="size-6" />
         </Button>
       </div>
@@ -249,7 +249,7 @@ const Header = () => {
                 <div className="min-w-14"></div>
               </div>
             </DrawerHeader>
-            <div className="p-6 overflow-y-auto bg-white">
+            <div className="p-6 h-full overflow-y-auto bg-white">
               <AllLangaugeMenu isMobileMenu={true} />
             </div>
           </DrawerContent>
@@ -272,7 +272,7 @@ const Header = () => {
                 <div className="min-w-14"></div>
               </div>
             </DrawerHeader>
-            <div className="p-6 overflow-y-auto bg-white">
+            <div className="p-6 h-full overflow-y-auto bg-white">
               <CurrencyMenu isMobileMenu={true} />
             </div>
           </DrawerContent>

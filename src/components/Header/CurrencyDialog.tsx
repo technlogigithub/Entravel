@@ -23,7 +23,7 @@ const CurrencyDialog = () => {
             USD
           </Button>
         </DialogTrigger>
-        <DialogContent className="sm:max-w-[1000px]">
+        <DialogContent className="md:max-w-[700px] lg:max-w-[1000px]">
           <DialogHeader>
             <DialogTitle>All currencies</DialogTitle>
           </DialogHeader>

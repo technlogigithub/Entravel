@@ -53,12 +53,12 @@ const socialLinks = [
 ]
 const Footer = ({isMobileHeader = true} : {isMobileHeader?: boolean}) => {
   return (
-    <div className={cn(isMobileHeader ? "px-12 py-20" : "p-0")}>
-      <div className="flex justify-between">
+    <div className={cn(isMobileHeader ? "px-6 md:px-12 py-12 md:py-20 bg-bgOne" : "p-0")}>
+      <div className="flex justify-between max-md:flex-wrap">
         {isMobileHeader && (
-            <div className="pr-4">
+            <div className="md:pr-4 max-md:mb-12">
             <Link to="/">
-              <IconCheckedCircle />
+              <IconCheckedCircle className="max-md:h-5 max-md:w-56"/>
             </Link>
             <p className="pt-8 font-normal">
               A truly revolutionary hotel booking concept.
@@ -67,20 +67,20 @@ const Footer = ({isMobileHeader = true} : {isMobileHeader?: boolean}) => {
         )}
         
         {/* Right Section */}
-        <div className={cn("gap-8 lg:gap-20", isMobileHeader ? "flex" : "grid")}>
+        <div className={cn("gap-12 md:gap-8 lg:gap-20", isMobileHeader ? "grid md:flex" : "grid")}>
             <ul>
                 {menuLinks.map((item) => (
-                    <li key={item.id} className="pb-4 last:pb-0"><Link to={item.url} className="text-base font-medium hover:text-blue">{item.label}</Link></li>
+                    <li key={item.id} className="pb-4 last:pb-0"><Link to={item.url} className="text-base font-medium text-black hover:text-blue">{item.label}</Link></li>
                 ))}
             </ul>
             <ul>
                 {menuSecondLinks.map((item) => (
-                    <li key={item.id} className="pb-4 last:pb-0"><Link to={item.url} className="text-base font-medium hover:text-blue">{item.label}</Link></li>
+                    <li key={item.id} className="pb-4 last:pb-0"><Link to={item.url} className="text-base font-medium hover:text-blue text-black">{item.label}</Link></li>
                 ))}
             </ul>
-            <ul className="flex gap-7">
+            <ul className={cn(!isMobileHeader ? "flex gap-7" : "hidden md:flex gap-7")}>
                 {socialLinks.map((item) => (
-                    <li key={item.id} className="pb-4 last:pb-0"><Link to={item.url} className="w-6 h-6 text-base font-medium hover:text-blue">{item.icon}</Link></li>
+                    <li key={item.id} className="pb-4 last:pb-0"><Link to={item.url} className="w-6 h-6 text-base font-medium hover:text-blue text-black">{item.icon}</Link></li>
                 ))}
             </ul>
         </div>
