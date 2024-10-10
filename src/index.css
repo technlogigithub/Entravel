@@ -10,6 +10,8 @@
     --primary-foreground:0, 0%, 18%, 1;
     --primary-light:0, 0%, 28%, 1;
     --primary-extraLight:203, 70%, 10%, 1;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
     --placeholder:0, 0%, 49%, 1;
     --secondary: 60, 20%, 99%, 1;
     --secondary-foreground:48, 26%, 93%, 1;
@@ -27,7 +29,15 @@
     --gray-light:0, 0%, 97%, 1;
     --gray-dark:0, 0%, 95%, 1;
     --text-color:209, 4%, 45%, 1;
-    --bg-one:60, 24%, 96%, 1
+    --text-light:202, 7%, 62%, 1;
+    --bg-one:60, 24%, 96%, 1;
+    --input:203, 1%, 13%, 1;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
   }
  
 }
@@ -43,7 +53,7 @@
     @apply text-black bg-bgOne
   }
   h1{
-    @apply text-[44px] lg:text-[64px] xl:text-[80px] leading-tight lg:leading-[80px] font-normal
+    @apply text-[51px] lg:text-[64px] xl:text-[80px] leading-none md:leading-tight lg:leading-[80px] font-normal
   }
   h3{
     @apply text-[32px] md:text-[46px] leading-[60px] font-medium text-black max-md:leading-normal

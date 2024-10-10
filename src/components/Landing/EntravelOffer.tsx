@@ -5,6 +5,11 @@ const EntravelOffer = () => {
   return (
     <Container>
       <h3 className="px-3 md:px-12">With Entravel you get</h3>
+      <p className="font-18 text-black max-w-[507px] justify-self-end !font-normal px-3 max-md:mt-6 block md:hidden">
+          Enjoy unbeatable hotel booking deals with Entravel - where{" "}
+          <span className="font-semibold">invitation-only membership</span>{" "}
+          unlocks a world of privileges.
+        </p>
       <div className="flex gap-4 mt-12 md:mt-20 px-3 max-xl:flex-wrap">
         <div className="basis-full xl:basis-3/4">
           <div className="card-shadow bg-white rounded-sm p-2">
@@ -12,7 +17,7 @@ const EntravelOffer = () => {
               <div className="basis-full md:basis-2/5">
                 <img src="/travel_one.jpg" alt="travel_one" />
               </div>
-              <div className="flex flex-col basis-full md:basis-3/5 justify-between md:min-h-56 md:pr-9 md:py-7 max-md:px-2">
+              <div className="flex flex-col basis-full md:basis-3/5 justify-between md:min-h-56 md:pr-9 md:py-7 max-md:px-2 max-md:pb-4">
                 <h2 className="text-[80px] md:text-[90px] flex-1 leading-none font-medium max-md:mb-2">
                   -70%
                 </h2>
@@ -22,6 +27,18 @@ const EntravelOffer = () => {
               </div>
             </div>
           </div>
+        {/* Mobile image view */}
+          <div className="card-shadow bg-white rounded-sm overflow-hidden mt-4 block md:hidden">
+            <img
+              src="/nft_img.png"
+              alt="travel_one"
+              className="h-[305px] w-full"
+            />
+            <h4 className="p-6 sm:p-8">
+              NFT pre- and public sale
+            </h4>
+          </div>
+
           {/* Seocnd Section */}
           <div className="flex gap-4 mt-4 max-xl:flex-wrap">
             <div className="basis-full xl:basis-3/5 card-shadow bg-white rounded-sm overflow-hidden px-6 md:px-8 py-8 md:py-6">
@@ -68,7 +85,7 @@ const EntravelOffer = () => {
 
         {/* Right Section */}
         <div className="basis-full xl:basis-1/4 max-xl:grid max-sm:grid-cols-1 max-xl:grid-cols-2 max-xl:gap-4">
-          <div className="card-shadow bg-white rounded-sm overflow-hidden">
+          <div className="card-shadow bg-white rounded-sm overflow-hidden max-md:hidden">
             <img
               src="/nft_img.png"
               alt="travel_one"

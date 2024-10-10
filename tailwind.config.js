@@ -29,6 +29,22 @@ export default {
   				foreground: 'hsl(var(--secondary-foreground))',
 				extraLight: 'hsl(var(--secondary-extraLight))',
   			},
+			  popover: {
+				DEFAULT: 'hsl(var(--popover))',
+				foreground: 'hsl(var(--popover-foreground))'
+			},
+			muted: {
+				DEFAULT: 'hsl(var(--muted))',
+				foreground: 'hsl(var(--muted-foreground))'
+			},
+			accent: {
+				DEFAULT: 'hsl(var(--accent))',
+				foreground: 'hsl(var(--accent-foreground))'
+			},
+			destructive: {
+				DEFAULT: 'hsl(var(--destructive))',
+				foreground: 'hsl(var(--destructive-foreground))'
+			},
 			placeholder: {
 				DEFAULT: 'hsl(var(--placeholder))',
 			},
@@ -61,9 +77,13 @@ export default {
 			},
   			text: {
   				DEFAULT: 'hsl(var(--text-color))',
+  				light: 'hsl(var(--text-light))',
   			},
 			bgOne:{
 				DEFAULT: 'hsl(var(--bg-one))',
+			},
+			input: {
+				DEFAULT: 'hsl(var(--input))',
 			}
   		},
 		  fontFamily: {
