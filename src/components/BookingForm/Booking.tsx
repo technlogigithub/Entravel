@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Button } from "../ui/button";
-import { Input } from "../ui/input";
 import { Label } from "../ui/label";
 import { IconSearch } from "@tabler/icons-react";
 import { Separator } from "../ui/separator";
@@ -69,6 +68,7 @@ const Booking = () => {
     setIsDropdown(false); // Close the dropdown
   };
 
+  console.log(setGuestSearch)
   return (
     <div className="md:flex gap-4 xl:gap-2 w-full max-lg:items-center">
       <div className="grid grid-cols-1 md:grid-cols-3 md:gap-4 flex-grow items-center">
