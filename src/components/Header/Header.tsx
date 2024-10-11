@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {
   IconChevronLeft,
   IconMenu2,
@@ -74,7 +74,7 @@ const AccountMenu = ({ isOpenMenu }: { isOpenMenu: boolean }) => {
     </>
   );
 };
-const Header = () => {
+const Header = ({isAuthenticated}: {isAuthenticated: boolean}) => {
   const [scrolled, setScrolled] = useState(false);
   const [isOpenMenu, setIsOpenMenu] = useState(false);
   const [isLangugeOpenMenu, setIsLangugeOpenMenu] = useState(false);
@@ -98,7 +98,7 @@ const Header = () => {
     };
   }, []);
 
-  const isLoggedIn = true;
+  // const isLoggedIn = true;
 
   const handleOpenMenu = () => {
     setIsOpenMenu(!isOpenMenu);
@@ -135,7 +135,7 @@ const Header = () => {
             </Button>
           </li>
           <li>
-            {isLoggedIn ? (
+            {isAuthenticated ? (
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <Button className="uppercase font-semibold gap-1 rounded-xl">
@@ -151,12 +151,16 @@ const Header = () => {
                 </DropdownMenuContent>
               </DropdownMenu>
             ) : (
-              <Button
-                variant="link"
-                className="uppercase font-semibold text-black"
-              >
+              <Link to="/login" className="uppercase font-semibold text-black hover:text-blue">
                 Sign in
-              </Button>
+                </Link>
+              // <Button
+              //   variant="link"
+              //   className="uppercase font-semibold text-black"
+              //   onClick={useNavigate("/login")}
+              // >
+                
+              // </Button>
             )}
           </li>
         </ul>

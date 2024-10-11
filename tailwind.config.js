@@ -85,7 +85,11 @@ export default {
 			input: {
 				DEFAULT: 'hsl(var(--input))',
 			},
-			blackDark:  'hsl(var(--black-dark))',
+			black: {
+				DEFAULT: 'hsl(var(--black))',
+				dark: 'hsl(var(--black-dark))',
+				light: 'hsl(var(--black-light))',
+			}
   		},
 		  fontFamily: {
 			dmsans: ['DM Sans', 'sans-serif'], 

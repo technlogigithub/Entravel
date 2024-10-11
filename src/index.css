@@ -38,7 +38,9 @@
     --accent-foreground: 0 0% 9%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
+    --black:0, 0%, 0%, 1;
     --black-dark:212, 28%, 9%, 1;
+    --black-light:25, 49%, 9%, 1
   }
  
 }
