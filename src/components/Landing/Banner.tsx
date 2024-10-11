@@ -6,7 +6,7 @@ const Banner = () => {
     <div className="bg-hero-pattern w-full h-[100vh] bg-center bg-cover bg-no-repeat">
       <div className="pt-20 md:pb-28 px-5 md:px-8 lg:px-12 xl:px-20 flex flex-col justify-center items-center h-full relative">
         <div className="flex flex-col justify-center items-center max-md:text-center max-md:w-full">
-          <h1 className="tracking-[-5%] text-primary max-sm:max-w-xs">
+          <h1 className="tracking-[-5%] max-sm:max-w-xs text-blackDark">
             Travel with{" "}
             <span className="tracking-[-2%] font-extrabold">crypto </span>
           </h1>
