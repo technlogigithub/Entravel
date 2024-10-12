@@ -8,17 +8,18 @@ import {
 } from "@/components/ui/dialog";
 import {  IconCurrencyDollar } from "@tabler/icons-react";
 import CurrencyMenu from "./CurrencyMenu";
+import { cn } from "@/lib/utils";
 
 
 
-const CurrencyDialog = () => {
+const CurrencyDialog = ({isBlack}: {isBlack?: boolean}) => {
 
 
   return (
     <div>
       <Dialog>
         <DialogTrigger asChild>
-          <Button variant="link" className="gap-2.5 text-black px-0">
+          <Button variant="link" className={cn("gap-2.5 text-black px-0", isBlack && "text-white")}>
             <IconCurrencyDollar className="size-4" />
             USD
           </Button>

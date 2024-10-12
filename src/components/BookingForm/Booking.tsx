@@ -13,6 +13,7 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import GuestSelector from "./GuestSelector";
+import { useNavigate } from "react-router-dom";
 
 // Define type for destination options
 interface DestinationOptions {
@@ -53,6 +54,7 @@ const Booking = () => {
     to: addDays(new Date(2022, 0, 20), 20),
   });
 
+  const navigate = useNavigate()
   const handleInputClick = () => {
     setIsDropdown(!isDropdown); // Open dropdown on input click
     setIsGuestDropdown(false);
@@ -67,6 +69,10 @@ const Booking = () => {
     setLocationSearch(location); // Set clicked option to input value
     setIsDropdown(false); // Close the dropdown
   };
+
+  const handleRedirectSearch = () => {
+    navigate("/search-result")
+  }
 
   console.log(setGuestSearch)
   return (
@@ -161,7 +167,7 @@ const Booking = () => {
                 </PopoverTrigger>
                 <PopoverContent className="w-auto p-0" align="start">
                   <Calendar
-                    initialFocus
+                    // initialFocus
                     mode="range"
                     defaultMonth={date?.from}
                     selected={date}
@@ -201,7 +207,7 @@ const Booking = () => {
       </div>
 
       {/* Search Button */}
-      <Button className="text-lg md:text-base lg:text-lg gap-2 px-4 lg:px-11 py-1 lg:py-5 h-auto min-h-auto rounded-xl lg:min-w-[181px] flex-shrink-0 max-md:h-16 max-lg:h-12 max-md:w-full max-md:mt-10">
+      <Button className="text-lg md:text-base lg:text-lg gap-2 px-4 lg:px-11 py-1 lg:py-5 h-auto min-h-auto rounded-xl lg:min-w-[181px] flex-shrink-0 max-md:h-16 max-lg:h-12 max-md:w-full max-md:mt-10" onClick={handleRedirectSearch}>
         <IconSearch className="size-6 md:size-4 lg:size-6" /> Search
       </Button>
     </div>

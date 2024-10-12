@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useState, useEffect, FC } from "react";
+import { Link } from "react-router-dom";
 import {
   IconChevronLeft,
   IconMenu2,
@@ -24,6 +24,10 @@ import Footer from "../shared/Footer";
 import AllLangaugeMenu from "./AllLangaugeMenu";
 import CurrencyMenu from "./CurrencyMenu";
 
+interface HeaderProps {
+  isAuthenticated: boolean;
+  isBlack?: boolean;
+}
 const AccountMenu = ({ isOpenMenu }: { isOpenMenu: boolean }) => {
   return (
     <>
@@ -74,7 +78,7 @@ const AccountMenu = ({ isOpenMenu }: { isOpenMenu: boolean }) => {
     </>
   );
 };
-const Header = ({isAuthenticated}: {isAuthenticated: boolean}) => {
+const Header: FC<HeaderProps> = ({ isAuthenticated, isBlack = true }) => {
   const [scrolled, setScrolled] = useState(false);
   const [isOpenMenu, setIsOpenMenu] = useState(false);
   const [isLangugeOpenMenu, setIsLangugeOpenMenu] = useState(false);
@@ -109,28 +113,37 @@ const Header = ({isAuthenticated}: {isAuthenticated: boolean}) => {
 
   const handleOpenCurrencyMenu = () => {
     setIsCurrencyOpenMenu(!isCurrencyOpenMenu);
-  }
+  };
   return (
     <div>
       <div
         className={`flex gap-4 fixed w-full h-20 px-6 md:px-10 lg:px-20 items-center justify-between top-0 z-30 transition-colors duration-300 max-md:border-b max-md:border-gray-400 ${
           scrolled ? "bg-white shadow-lg" : "bg-transparent"
-        }`}
+        } ${isBlack && "!bg-black !text-white"}`}
       >
-        <Link to="/">
-          <IconCheckedCircle />
-        </Link>
+        {isBlack ? (
+          <Link to="/">
+            <img src="/icons/white_logo.png" alt="Entravel" />
+          </Link>
+        ) : (
+          <Link to="/">
+            <IconCheckedCircle />
+          </Link>
+        )}
 
         <ul className="hidden md:flex gap-5 items-center">
           <li>
-            <AllLanguagesDialog />
+            <AllLanguagesDialog isBlack={isBlack}/>
           </li>
           <li>
-            <CurrencyDialog />
+            <CurrencyDialog isBlack={isBlack}/>
           </li>
           <li className="h-8 bg-lightBorder w-[1px]"></li>
           <li>
-            <Button variant="link" className="text-black px-0">
+            <Button
+              variant="link"
+              className={cn("px-0 text-black", isBlack && "text-white")}
+            >
               Blog
             </Button>
           </li>
@@ -151,15 +164,21 @@ const Header = ({isAuthenticated}: {isAuthenticated: boolean}) => {
                 </DropdownMenuContent>
               </DropdownMenu>
             ) : (
-              <Link to="/login" className="uppercase font-semibold text-black hover:text-blue">
+              <Link
+                to="/login"
+                className={cn(
+                  "uppercase font-semibold text-black hover:text-blue inline-flex pt-[3px]",
+                  isBlack && "text-white"
+                )}
+              >
                 Sign in
-                </Link>
+              </Link>
               // <Button
               //   variant="link"
               //   className="uppercase font-semibold text-black"
               //   onClick={useNavigate("/login")}
               // >
-                
+
               // </Button>
             )}
           </li>

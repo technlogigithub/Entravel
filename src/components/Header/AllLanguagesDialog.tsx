@@ -8,18 +8,19 @@ import {
 } from "@/components/ui/dialog";
 import { GlobeIcon } from "@radix-ui/react-icons";
 import AllLangaugeMenu from "./AllLangaugeMenu";
+import { cn } from "@/lib/utils";
 
 
 
 
-const AllLanguagesDialog = () => {
+const AllLanguagesDialog = ({isBlack}: {isBlack?: boolean}) => {
 
 
   return (
     <div>
       <Dialog>
         <DialogTrigger asChild>
-          <Button variant="link" className="gap-2.5 text-black px-0">
+          <Button variant="link" className={cn("gap-2.5 text-black px-0", isBlack && "text-white")}>
             <GlobeIcon className="w-4 h-4" />
             English
           </Button>

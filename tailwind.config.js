@@ -89,7 +89,9 @@ export default {
 				DEFAULT: 'hsl(var(--black))',
 				dark: 'hsl(var(--black-dark))',
 				light: 'hsl(var(--black-light))',
-			}
+				secondary: 'hsl(var(--black-secondary))',
+			},
+			input:"hsl(var(--input))",
   		},
 		  fontFamily: {
 			dmsans: ['DM Sans', 'sans-serif'], 
@@ -101,7 +103,8 @@ export default {
 			'disocunt-mobile-bg': "url('/mobile_saving.jpg')",
 		  },
 		  screens:{
-			"3xl":"1920px"
+			"3xl":"1920px",
+			"xlg":"991px"
 		  },
 		  boxShadow: {
 			'sm': '0 -3px 57px 0 rgba(0, 0, 0, 0.1)',
