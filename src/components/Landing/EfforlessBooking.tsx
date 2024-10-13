@@ -29,7 +29,7 @@ const EfforlessBooking = () => {
               </div>
             </div>
             <p className="font-18">{item.text}</p>
-            {item.isButton && <Button variant="link" className="hidden md:flex text-base mt-11 p-0">Learn more <IconArrowRight className="size-5 ml-1"/></Button>}
+            {item.isButton && <Button variant="link" className="hidden md:flex text-base mt-11 p-0 text-primary hover:text-blue">Learn more <IconArrowRight className="size-5 ml-1"/></Button>}
           </Card>
         ))}
       </div>

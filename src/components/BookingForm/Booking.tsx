@@ -40,7 +40,7 @@ const destinationOptions: DestinationOptions = {
   },
 };
 
-const Booking = () => {
+const Booking = ({isInner} : {isInner?: boolean}) => {
   const [locationSearch, setLocationSearch] = useState<string>(
     "Amsterdam, Netherlands"
   );
@@ -76,7 +76,7 @@ const Booking = () => {
 
   console.log(setGuestSearch)
   return (
-    <div className="md:flex gap-4 xl:gap-2 w-full max-lg:items-center">
+    <div className={cn("md:flex gap-4 xl:gap-2 w-full max-lg:items-center",  isInner && "items-center")}>
       <div className="grid grid-cols-1 md:grid-cols-3 md:gap-4 flex-grow items-center">
         {/* Location input */}
         <div>
@@ -109,7 +109,7 @@ const Booking = () => {
                           <Button
                             variant="link"
                             onClick={() => handleOptionClick(item.name)}
-                            className="px-0 pt-2 h-auto min-h-auto pb-0 text-base flex-col text-left items-start"
+                            className="group px-0 pt-2 h-auto min-h-auto pb-0 text-base flex-col text-left items-start text-primary hover:text-blue"
                           >
                             {/* Conditionally render title */}
                             {item.title && (
@@ -117,7 +117,7 @@ const Booking = () => {
                                 {item.title}
                               </h6>
                             )}
-                            <p className={cn(item.title && "font-normal mb-3")}>
+                            <p className={cn(item.title && "font-normal mb-3 group:hover:text-blue")}>
                               {item.name}
                             </p>
                           </Button>
@@ -207,7 +207,7 @@ const Booking = () => {
       </div>
 
       {/* Search Button */}
-      <Button className="text-lg md:text-base lg:text-lg gap-2 px-4 lg:px-11 py-1 lg:py-5 h-auto min-h-auto rounded-xl lg:min-w-[181px] flex-shrink-0 max-md:h-16 max-lg:h-12 max-md:w-full max-md:mt-10" onClick={handleRedirectSearch}>
+      <Button className={cn("gap-2  h-auto min-h-auto rounded-xl  flex-shrink-0 max-md:h-16 max-lg:h-12 max-md:w-full max-md:mt-10", isInner ? "text-base py-3 px-6 font-medium" : "text-lg md:text-base lg:text-lg px-4 lg:px-11 py-1 lg:py-5 lg:min-w-[181px]")} onClick={handleRedirectSearch}>
         <IconSearch className="size-6 md:size-4 lg:size-6" /> Search
       </Button>
     </div>
