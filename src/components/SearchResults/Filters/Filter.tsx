@@ -18,13 +18,13 @@ const Filter = () => {
   const [activeStar, setActiveStar] = useState<number | null>(null);
   return (
     <div>
-      <div className="relative max-h-96 w-full overflow-hidden">
+      <div className="relative max-h-96 w-full overflow-hidden max-2xlg:hidden">
         <img src="/map.jpg" alt="map" />
         <Button className="bg-bgOpacity bg-opacity-50 shadow-none min-w-32 text-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-full">
           Show map
         </Button>
       </div>
-      <div className="flex justify-between items-center border-b border-input pb-3 my-8">
+      <div className="flex justify-between items-center border-b border-input pb-3 my-2 2xlg:my-8">
         <h2 className="text-lg font-semibold pr-2">Filter</h2>
         <Button variant="link" className="p-0 underline h-auto text-primary hover:text-blue">
           Clear all
@@ -32,7 +32,7 @@ const Filter = () => {
       </div>
       {/* Search By Hotel Name */}
       <div className="my-8">
-        <Label className="text-base font-semibold mb-5 text-black">
+        <Label className="text-base font-semibold mb-2 2xlg:mb-5 text-black">
           Search by hotel name
         </Label>
         <Input placeholder="Hotel name" className="rounded-lg" />
@@ -48,7 +48,7 @@ const Filter = () => {
 
       {/* Stars Filter */}
       <div className="my-8">
-        <Label className="text-base font-semibold mb-5 text-black">Stars</Label>
+        <Label className="text-base font-semibold mb-2 2xlg:mb-5 text-black">Stars</Label>
         <div className="flex gap-2">
           {starList.map((item, index) => (
             <Button
@@ -84,7 +84,7 @@ const Filter = () => {
 
       {/* Cancellation policy */}
       <div className="my-8">
-        <Label className="text-base font-semibold mb-5 text-black">
+        <Label className="text-base font-semibold mb-2 2xlg:mb-5 text-black">
           Cancellation policy
         </Label>
         <div className="flex flex-col gap-5">

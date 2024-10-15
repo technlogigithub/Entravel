@@ -111,7 +111,11 @@ export default {
       screens: {
         "3xl": "1920px",
         "2xxl": "1600px",
-        xlg: "991px",
+        "2xlg":"1199px",
+         xlg: "991px",
+         "2xs":"480px",
+         "3xs":"390px",
+          "4xs":"370px"
       },
       boxShadow: {
         sm: "0 -3px 57px 0 rgba(0, 0, 0, 0.1)",

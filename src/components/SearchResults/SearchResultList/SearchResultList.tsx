@@ -5,12 +5,21 @@ import {
   DropdownMenuContent,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { IconCheck, IconStarFilled, IconHeart } from "@tabler/icons-react";
+import {
+  IconCheck,
+  IconStarFilled,
+  IconHeart,
+  IconAdjustmentsHorizontal,
+  IconMap,
+  IconX,
+} from "@tabler/icons-react";
 import { useState } from "react";
 import { resultItems } from "./data";
 import { Separator } from "@/components/ui/separator";
 import OwlCarousel from "react-owl-carousel";
 import ResultSkelton from "@/components/Skelton/ResultSkelton";
+import { Drawer, DrawerContent } from "@/components/ui/drawer";
+import Filter from "../Filters/Filter";
 
 const sortMenuList = [
   {
@@ -40,9 +49,9 @@ const SortMenu = () => {
         <DropdownMenuTrigger asChild>
           <Button
             variant="outline"
-            className="text-lg font-semibold gap-1.5 rounded-xl shadow-none bg-gray-light"
+            className="text-sm md:text-base gap-1.5 rounded-xl shadow-none bg-gray-light"
           >
-            <IconSort />
+            <IconSort className="size-4 md:size-5" />
             Sort by: {selectedSort.label}
           </Button>
         </DropdownMenuTrigger>
@@ -52,7 +61,7 @@ const SortMenu = () => {
               <li key={item.label}>
                 <Button
                   variant="ghost"
-                  className="w-full justify-start rounded-none"
+                  className="w-full justify-start rounded-none max-2xlg:h-auto max-2xlg:!py-1"
                   onClick={() => {
                     handleSelectSort(item);
                   }}
@@ -68,25 +77,51 @@ const SortMenu = () => {
   );
 };
 const SearchResultList = () => {
-    const options = {
-        loop: false,
-        margin: 0,
-        nav: true,
-        items: 1,
-      };
+  const [showFilter, setShowFilter] = useState(false);
+  const options = {
+    loop: false,
+    margin: 0,
+    nav: true,
+    items: 1,
+  };
+
+  const handleOpenFilter = () => {
+    setShowFilter(true);
+  };
   return (
     <div>
+      <div className="flex justify-between gap-2 2xlg:hidden max-2xlg:mb-6 max-md:flex-wrap">
+        <SortMenu />
+        <Button
+          variant="outline"
+          className="text-sm md:text-base gap-1.5 rounded-xl shadow-none bg-gray-light"
+          onClick={handleOpenFilter}
+        >
+          <IconAdjustmentsHorizontal className="size-4 md:size-5" />
+          Filters
+        </Button>
+        <Button
+          variant="outline"
+          className="text-sm md:text-base gap-1.5 rounded-xl shadow-none bg-gray-light"
+        >
+          <IconMap className="size-4 md:size-5" />
+          Map
+        </Button>
+      </div>
       <p className="text-text">Amsterdam, Netherlands</p>
       <div className="flex justify-between mt-2 items-center">
         <h2 className="text-xl font-medium">126 hotels available</h2>
-        <SortMenu />
+        <div className="hidden 2xlg:block">
+          <SortMenu />
+        </div>
       </div>
+
       {/* Result List of results */}
       {resultItems.map((item) => (
         <div key={item.hotelName}>
-          <div className="flex gap-4 mt-5 items-stretch">
-            <div className="basis-[320px] 2xxl:basis-[420px] flex items-center justify-center overflow-hidden">
-              <div className="w-[300px] 2xxl:w-[400px] overflow-hidden block">
+          <div className="flex gap-4 mt-5 items-stretch max-xlg:items-start max-md:flex-wrap">
+            <div className="md:basis-[250px] xlg:basis-[320px] 2xxl:basis-[420px] flex items-center justify-center overflow-hidden">
+              <div className="w-[280px] 4xs:w-[325px] 3xs:w-[340px] 2xs:w-[300px] 2xxl:w-[400px] overflow-hidden block">
                 <OwlCarousel
                   className="owl-theme section hotelCarousel relative"
                   autoplay={false}
@@ -94,37 +129,60 @@ const SearchResultList = () => {
                 >
                   {/* Carousel item */}
                   {item.propertyImages.map((image, index) => (
-                      <div className="w-full h-auto relative rounded-xl overflow-hidden" key={index}>
-                        <img src={image.imageUrl} alt={image.altTag} className="w-full" />
-                        <Button className="absolute top-2 right-2 w-8 h-8 rounded-full bg-white flex items-center justify-center p-0 text-black hover:text-white">
-                            <IconHeart className="size-4"/>
-                        </Button>
-                     </div>
+                    <div
+                      className="w-full h-auto relative rounded-md md:rounded-xl overflow-hidden"
+                      key={index}
+                    >
+                      <img
+                        src={image.imageUrl}
+                        alt={image.altTag}
+                        className="w-full"
+                      />
+                      <Button className="absolute top-2 right-2 w-8 h-8 rounded-full bg-white flex items-center justify-center p-0 text-black hover:text-white">
+                        <IconHeart className="size-4" />
+                      </Button>
+                    </div>
                   ))}
                 </OwlCarousel>
               </div>
             </div>
             {/* Result Decription */}
-            <div className="basis-[calc(100%_-_320px)] 2xxl:basis-[calc(100%_-_420px)] flex w-full flex-col">
+            <div className="md:basis-[calc(100%_-_250px)] xlg:basis-[calc(100%_-_320px)] 2xxl:basis-[calc(100%_-_420px)] flex w-full flex-col">
               {/* Top Description */}
               <div className="w-full flex-grow">
                 <div className="flex justify-between gap-4 items-start">
                   <div>
-                    <h4 className="text-lg font-medium pb-2">
+                    <h4 className="text-lg font-semibold md:font-medium pb-2">
                       {item.hotelName}
                     </h4>
-                    <div className="flex items-center gap-1">
-                      {Array.from({ length: 5 - item.rating }).map(
-                        (_, index) => (
-                          <IconStarFilled
-                            className="size-[14px] text-yellow"
-                            key={`empty-${index}`}
-                          />
-                        )
-                      )}
+                    <div className="max-md:flex gap-2 items-center">
+                      <div className="flex items-center gap-1">
+                        {Array.from({ length: 5 - item.rating }).map(
+                          (_, index) => (
+                            <IconStarFilled
+                              className="size-[14px] text-yellow"
+                              key={`empty-${index}`}
+                            />
+                          )
+                        )}
+                      </div>
+                      <div className="flex md:hidden gap-2 items-center">
+                        <div className="relative bg-green text-white text-sm font-medium py-1.5 px-2 rounded-full flex items-center justify-center leading-none">
+                          {item.totalRating}
+                          <div className="absolute -bottom-[11px] left-[1.5px] w-0 h-0 border-l-[14px] border-l-transparent border-t-[18px] border-t-green rotate-[272deg] max-md:hidden"></div>
+                        </div>
+             
+                          <h5 className="text-sm font-medium">
+                            {item.hotelStatus}
+                          </h5>
+                          <p className="text-xs text-text">
+                           ( {item.reviews} reviews)
+                          </p>
+                      </div>
                     </div>
                   </div>
-                  <div className="flex  gap-3 items-start">
+                {/* Desktop text start */}
+                  <div className="hidden md:flex  gap-3 items-start">
                     <div className="text-right">
                       <h5 className="text-green text-base font-semibold pb-0.5">
                         {item.hotelStatus}
@@ -138,14 +196,15 @@ const SearchResultList = () => {
                       <div className="absolute -bottom-[11px] left-[1.5px] w-0 h-0 border-l-[14px] border-l-transparent border-t-[18px] border-t-green rotate-[272deg]"></div>
                     </div>
                   </div>
+                  {/* Desktop text End */}
                 </div>
-                <div className="text-sm pt-2.5 max-w-[520px] flex items-start">
-                  <p className="line-clamp-2 flex-1" title={item.description}>
+                <div className="text-sm pt-2.5 md:max-w-[520px] block items-start md:flex">
+                  <p className="line-clamp-2 flex-1 max-md:mb-1" title={item.description}>
                     {item.description}
                   </p>
                   <Button
                     variant="link"
-                    className="h-auto min-h-auto p-0 pl-1 flex-shrink-0"
+                    className="h-auto min-h-auto p-0 md:pl-1 flex-shrink-0"
                   >
                     Show on map
                   </Button>
@@ -160,9 +219,9 @@ const SearchResultList = () => {
               </div>
               {/* Bottom Description */}
               <div className="flex justify-between gap-4 mt-2">
-                <ul className="flex gap-3 self-end">
+                <ul className="block md:flex gap-3 self-end">
                   {(item.features ?? []).map((feature, index) => (
-                    <li className="flex items-center gap-1" key={index}>
+                    <li className="flex items-center gap-1 max-md:mb-2 last:max-md:mb-0" key={index}>
                       <IconCheck className="size-4 text-green" />
                       <p className="text-[13px] font-medium">{feature.label}</p>
                     </li>
@@ -177,7 +236,7 @@ const SearchResultList = () => {
                       ${item.offerPrice}
                     </h4>
                   </div>
-                  <p>price per night</p>
+                  <p className="max-md:text-sm max-md:text-text max-md:font-normal">price per night</p>
                   <p className="text-[13px] font-medium pt-1">
                     ${item.totalPrice} for {item.days} nights
                   </p>
@@ -188,9 +247,32 @@ const SearchResultList = () => {
           <Separator className="my-6" />
         </div>
       ))}
-        <ResultSkelton/>
-        <Separator className="my-6" />
-        <ResultSkelton/>
+      <ResultSkelton />
+      <Separator className="my-6" />
+      <ResultSkelton />
+
+      {/* Responsive Filters */}
+      {showFilter && (
+        <Drawer
+          open={showFilter}
+          onOpenChange={() => setShowFilter(false)}
+          direction="left"
+          dismissible={false}
+        >
+          <DrawerContent>
+            <Button
+              size="icon"
+              onClick={() => setShowFilter(false)}
+              className="w-6 h-6 min-h-6 rounded-full shadow-none flex self-end bg-transparent text-black hover:text-blue hover:bg-transparent"
+            >
+              <IconX className="size-6" />
+            </Button>
+            <div className="max-h-[100vh_-_50px] overflow-y-auto -mx-4 px-4">
+              <Filter />
+            </div>
+          </DrawerContent>
+        </Drawer>
+      )}
     </div>
   );
 };

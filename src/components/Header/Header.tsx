@@ -71,7 +71,7 @@ const AccountMenu = ({ isOpenMenu }: { isOpenMenu: boolean }) => {
       <Button
         variant={isOpenMenu ? "secondary" : "link"}
         onClick={() => {}}
-        className={cn(isOpenMenu && "w-full bg-gray-dark h-12 my-4")}
+        className={cn(isOpenMenu && "w-full bg-gray-dark h-12 my-4 shadow-none")}
       >
         Sign out
       </Button>
@@ -87,7 +87,7 @@ const Header: FC<HeaderProps> = ({ isAuthenticated, isBlack = true }) => {
   useEffect(() => {
     const handleScroll = () => {
       const offset = window.scrollY;
-      if (offset > 100) {
+      if (offset > 60) {
         setScrolled(true);
       } else {
         setScrolled(false);
@@ -117,7 +117,7 @@ const Header: FC<HeaderProps> = ({ isAuthenticated, isBlack = true }) => {
   return (
     <div>
       <div
-        className={`flex gap-4 fixed w-full h-20 px-6 md:px-10 lg:px-20 items-center justify-between top-0 z-30 transition-colors duration-300 max-md:border-b max-md:border-gray-400 ${
+        className={`z-50 flex gap-4 fixed w-full h-16 md:h-20 px-6 md:px-10 2xlg:px-20 items-center justify-between top-0 transition-colors duration-300 max-md:border-b max-md:border-gray-400 ${
           scrolled ? "bg-white shadow-lg" : "bg-transparent"
         } ${isBlack && "!bg-black !text-white"}`}
       >
@@ -183,7 +183,7 @@ const Header: FC<HeaderProps> = ({ isAuthenticated, isBlack = true }) => {
             )}
           </li>
         </ul>
-        <Button onClick={handleOpenMenu} variant="link" className="md:hidden">
+        <Button onClick={handleOpenMenu} variant="link" className={cn( "md:hidden p-0 text-black hover:text-blue", isBlack && "text-white")} >
           <IconMenu2 className="size-6" />
         </Button>
       </div>
@@ -191,7 +191,7 @@ const Header: FC<HeaderProps> = ({ isAuthenticated, isBlack = true }) => {
       {/* Mobile Menu */}
       {isOpenMenu && (
         <Drawer open={isOpenMenu} direction="left">
-          <DrawerContent>
+          <DrawerContent  className="p-0">
             <DrawerHeader>
               <div className="flex justify-between items-center bg-white shadow-three py-2.5">
                 <Button variant="link" onClick={() => setIsOpenMenu(false)}>
