@@ -20,7 +20,7 @@ import OwlCarousel from "react-owl-carousel";
 import ResultSkelton from "@/components/Skelton/ResultSkelton";
 import { Drawer, DrawerContent } from "@/components/ui/drawer";
 import Filter from "../Filters/Filter";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const sortMenuList = [
   {
