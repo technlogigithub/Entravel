@@ -98,6 +98,8 @@ export default {
         bgOpacity: "hsl(var(--bg-opacity))",
         disabled: "hsl(var(--disabled))",
         blablackLightOverlay: "hsl(var(--blackLightOverlay))",
+        bgForeground: "hsl(var(--bg-foreground))",
+        textExtraLight: "hsl(var(--text-extraLight))",
       },
       fontFamily: {
         dmsans: ["DM Sans", "sans-serif"],

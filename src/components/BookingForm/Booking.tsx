@@ -93,7 +93,7 @@ const BookingItem: FC<BookingItemProps> = ({
       <div
         className={cn(
           "md:flex gap-4 xl:gap-2 w-full max-lg:items-center",
-          isInner && "items-center"
+          isInner && "items-center py-2"
         )}
       >
         <div className="grid grid-cols-1 md:grid-cols-3 md:gap-4 flex-grow items-center">

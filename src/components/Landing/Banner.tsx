@@ -15,7 +15,7 @@ const Banner = () => {
           </p>
 
 
-            <div className="flex bg-white w-4xl xl:w-[1084px] rounded-2xl md:rounded-full py-6 md:py-1 relative pl-6 md:pl-8 xl:pl-11 pr-6 gap-5 mt-16 md:mt-20 items-center max-md:w-full">
+            <div className="flex bg-white w-4xl xl:w-[1084px] rounded-2xl md:rounded-full py-6 md:py-1 relative pl-6 md:pl-8 xl:pl-11 pr-6 gap-5 mt-12 md:mt-20 items-center max-md:w-full">
               <Booking />
             </div>
         </div>

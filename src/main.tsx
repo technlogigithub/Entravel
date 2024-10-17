@@ -9,6 +9,7 @@ import CreateAccount from './pages/createaccount.tsx'
 import ResetPasswords from './pages/resetpassword.tsx'
 import VerifyEmails from './pages/verifyemail.tsx'
 import SearchResults from './pages/searchresults.tsx'
+import SearchDetails from './pages/searchdetails.tsx'
 
 const router = createBrowserRouter([
   {
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
       {
         path:'/search-result',
         element: <SearchResults />
+      },
+      {
+        path:'/search-deatils',
+        element: <SearchDetails />
       }
     ]
   },
