@@ -49,7 +49,8 @@
     --disabled:210, 4%, 57%, 1;
     --blackLightOverlay:0, 0%, 0%, 0.45;
     --bg-foreground:249, 249, 250, 1;
-    --text-extraLight:240, 8%, 50%, 1
+    --text-extraLight:240, 8%, 50%, 1;
+    --inner-bg:240, 9%, 98%, 1
   }
  
 }
@@ -130,4 +131,7 @@
 .hotelCarousel.owl-theme .owl-dots{
   @apply absolute left-1/2 -translate-x-1/2 bottom-0
 }
-
+.imageOverlay::after{
+  content:"";
+  @apply w-full h-full absolute top-0 left-0 bottom-0 right-0 bg-black opacity-85
+}

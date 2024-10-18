@@ -100,6 +100,7 @@ export default {
         blablackLightOverlay: "hsl(var(--blackLightOverlay))",
         bgForeground: "hsl(var(--bg-foreground))",
         textExtraLight: "hsl(var(--text-extraLight))",
+        innerBg: "hsl(var(--inner-bg))",
       },
       fontFamily: {
         dmsans: ["DM Sans", "sans-serif"],
