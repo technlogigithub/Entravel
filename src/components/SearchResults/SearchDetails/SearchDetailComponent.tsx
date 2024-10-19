@@ -13,10 +13,15 @@ import { IconHeart, IconMapPin, IconStarFilled } from "@tabler/icons-react";
 import { attractions, hotelLists } from "./SearchDetailsList";
 import { cn } from "@/lib/utils";
 import Review from "@/components/shared/Review";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import HotelDetailsImageDialog from "./HotelDetailsImageDialog";
 
 const rating = 0;
 const SearchDetailComponent = () => {
+  const navigate = useNavigate();
+  const handleRedirectCheckout = () => {
+    navigate("/checkout");
+  }
   return (
     <div className="pt-6 max-w-[950px] mx-auto mb-0 px-6 md:px-10 lg:px-0">
       <Breadcrumb className="max-md:hidden">
@@ -68,12 +73,8 @@ const SearchDetailComponent = () => {
                 alt="details"
                 className="sm:col-start-3 sm:col-end-4 self-stretch object-cover h-full max-sm:rounded overflow-hidden"
               />
-              <Button
-                variant="ghost"
-                className="bg-transparent text-white absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30 text-sm sm:text-base hover:bg-transparent hover:text-white px-2 whitespace-normal leading-tight"
-              >
-                See all 28 images
-              </Button>
+              {/* Reamining count images */}
+              <HotelDetailsImageDialog />
             </div>
             {/* <div> */}
             <Link to="/" className="flex self-stretch">
@@ -199,20 +200,24 @@ const SearchDetailComponent = () => {
 
                     <div className="sm:hidden mt-4">
                       <p className="text-xs text-textExtraLight mb-1">
-                       What’s includes
+                        What’s includes
                       </p>
-                      <h4 className="text-base font-medium text-black">{amenitie.roomType}</h4>
+                      <h4 className="text-base font-medium text-black">
+                        {amenitie.roomType}
+                      </h4>
                       {amenitie.isRefund && (
                         <p className="text-green text-xs">Refundable</p>
                       )}
                     </div>
-                    
+
                     <div className="flex flex-col sm:hidden mb-4">
-                    <p className="font-normal max-sm:text-sm">All taxes and fees included</p>
-                    <p className="font-normal max-sm:text-text-light">
-                      + excludes 30$ taxes & fees (incl. VAT){" "}
-                    </p>
-                  </div>
+                      <p className="font-normal max-sm:text-sm">
+                        All taxes and fees included
+                      </p>
+                      <p className="font-normal max-sm:text-text-light">
+                        + excludes 30$ taxes & fees (incl. VAT){" "}
+                      </p>
+                    </div>
                     {/* Mobile View Benefits List End */}
 
                     <div className="flex flex-col gap-2 max-sm:hidden">
@@ -249,14 +254,20 @@ const SearchDetailComponent = () => {
 
                 <div className="grid sm:grid-cols-3 gap-2 text-sm font-medium text-black-secondary sm:mt-7">
                   <div className="hidden sm:flex flex-col sm:gap-2 col-span-2">
-                    <p className="font-normal max-sm:text-sm">All taxes and fees included</p>
+                    <p className="font-normal max-sm:text-sm">
+                      All taxes and fees included
+                    </p>
                     <p className="font-normal max-sm:text-text-light">
                       + excludes 30$ taxes & fees (incl. VAT){" "}
                     </p>
                   </div>
-                
+
                   <div className="flex flex-col gap-2 max-sm:mt-8">
-                    <Button className="w-full rounded-xl max-sm:text-lg max-sm:h-12" size="lg">
+                    <Button
+                      className="w-full rounded-xl max-sm:text-lg max-sm:h-12"
+                      size="lg"
+                      onClick={handleRedirectCheckout}
+                    >
                       Book now
                     </Button>
                   </div>
@@ -280,8 +291,19 @@ const SearchDetailComponent = () => {
       {/* Bottom Section */}
       <div>
         <div className="max-sm:hidden">
-          <h5 className="text-xl font-semibold mb-7">Reviews</h5>
+          <img src="/review_image.png" alt="review_image" />
+          {/* <h5 className="text-xl font-semibold mb-7">Reviews</h5>
           <Review isRatingFirst={true} />
+          <div className="mt-10">
+            <iframe
+              src="https://example.com"
+              title="Example Website"
+              width="600"
+              height="400"
+              frameBorder="0"
+              allowFullScreen
+            ></iframe>
+          </div> */}
         </div>
         <div>
           {/* About the hotel */}

@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import "../node_modules/react-image-gallery/styles/css/image-gallery.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -46,11 +47,14 @@
     --bg-opacity:0, 0%, 0%, 0.7;
     --yellow:40, 99%, 53%, 1;
     --green:155, 100%, 27%, 1;
+    --green-50:144, 80%, 36%, 1;
+    --green-100:144, 80%, 36%, 0.10;
     --disabled:210, 4%, 57%, 1;
     --blackLightOverlay:0, 0%, 0%, 0.45;
     --bg-foreground:249, 249, 250, 1;
     --text-extraLight:240, 8%, 50%, 1;
-    --inner-bg:240, 9%, 98%, 1
+    --inner-bg:240, 9%, 98%, 1;
+    --brown:32, 100%, 41%, 1
   }
  
 }
@@ -135,3 +139,9 @@
   content:"";
   @apply w-full h-full absolute top-0 left-0 bottom-0 right-0 bg-black opacity-85
 }
+
+.image-gallery-left-nav .image-gallery-svg, .image-gallery-right-nav .image-gallery-svg {
+  height: 59px;
+  width: 40px;
+}
+

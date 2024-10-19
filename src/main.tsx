@@ -10,6 +10,8 @@ import ResetPasswords from './pages/resetpassword.tsx'
 import VerifyEmails from './pages/verifyemail.tsx'
 import SearchResults from './pages/searchresults.tsx'
 import SearchDetails from './pages/searchdetails.tsx'
+import Checkout from './pages/checkout.tsx'
+import BookingConfirmation from './pages/bookingconfirmation.tsx'
 
 const router = createBrowserRouter([
   {
@@ -43,6 +45,14 @@ const router = createBrowserRouter([
       {
         path:'/search-deatils',
         element: <SearchDetails />
+      },
+      {
+        path:'/checkout',
+        element: <Checkout />
+      },
+      {
+        path:'/booking-confirmation',
+        element: <BookingConfirmation />
       }
     ]
   },
