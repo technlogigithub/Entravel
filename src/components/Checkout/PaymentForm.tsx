@@ -14,7 +14,7 @@ const PaymentForm = ({ onFinish }: { onFinish: () => void }) => {
   return (
     <div className="pb-10">
       <div className="w-6 h-6 flex justify-center items-center rounded-full border-2 border-primary text-sm font-semibold mb-1.5">
-        1
+        <span className="md:hidden">2</span> <span className="max-md:hidden">1</span>
       </div>
       <h3 className="text-base font-medium pb-1">Room 1: Double deluxe</h3>
       <p className="text-sm text-text pb-4">
@@ -123,10 +123,10 @@ const PaymentForm = ({ onFinish }: { onFinish: () => void }) => {
 
       {/* Step Two */}
       <div className="w-6 h-6 flex justify-center items-center rounded-full border-2 border-primary text-sm font-semibold mb-1.5">
-        2
+      <span className="md:hidden">3</span> <span className="max-md:hidden">2</span>
       </div>
       <h3 className="text-base font-medium pb-1">Select payment method</h3>
-      <p className="text-sm text-text pb-4">
+      <p className="text-sm text-text md:pb-4">
         Availability of payment methods dependent on billing country
       </p>
       <div className="mt-5">

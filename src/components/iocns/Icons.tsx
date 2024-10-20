@@ -565,6 +565,42 @@ const IconCoffeeCup = () => {
   );
 };
 
+const IconUsdt= () => {
+  return (
+<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_5678_78471)">
+<circle cx="10" cy="10" r="10" fill="#50AF95"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M8.81246 9.99011C8.87875 9.99512 9.22126 10.0157 9.98526 10.0157C10.5929 10.0157 11.0244 9.99735 11.1757 9.99011C13.5241 9.88597 15.2769 9.47386 15.2769 8.98045C15.2769 8.48704 13.5241 8.07549 11.1757 7.96968V9.57967C11.0222 9.59081 10.5824 9.61699 9.97477 9.61699C9.24556 9.61699 8.88041 9.58636 8.81467 9.58023V7.97079C6.47129 8.07605 4.72231 8.48815 4.72231 8.98045C4.72231 9.47275 6.47073 9.88485 8.81467 9.98955L8.81246 9.99011ZM8.81246 7.80428V6.36359H5.54211V4.16663H14.4461V6.36359H11.1763V7.80373C13.834 7.9268 15.8327 8.45752 15.8327 9.0935C15.8327 9.72948 13.834 10.2596 11.1763 10.3833V15H8.81302V10.3816C6.16138 10.2585 4.16602 9.72836 4.16602 9.09294C4.16602 8.45752 6.15916 7.92791 8.81246 7.80428Z" fill="white"/>
+</g>
+<defs>
+<clipPath id="clip0_5678_78471">
+<rect width="20" height="20" fill="white" transform="matrix(1 0 0 -1 0 20)"/>
+</clipPath>
+</defs>
+</svg>
+
+
+  );
+};
+
+const IconShieldCheck= () => {
+  return (
+    <svg width="25" height="26" viewBox="0 0 25 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="mask0_5765_33165" style={{ maskType: 'luminance' }} maskUnits="userSpaceOnUse" x="3" y="1" width="19" height="24">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M19.1577 1.91113H5.04022C3.93099 1.91113 3.03352 2.81841 3.03352 3.92731L3.02344 16.9619C3.02344 17.6574 3.37637 18.2724 3.91082 18.6353L12.099 24.089L20.277 18.6353C20.8115 18.2724 21.1644 17.6574 21.1644 16.9619L21.1745 3.92731C21.1745 2.81841 20.2669 1.91113 19.1577 1.91113ZM10.081 17.0324L5.03906 11.992L6.46089 10.5705L10.081 14.1795L17.7347 6.52812L19.1565 7.95961L10.081 17.0324Z" fill="white"/>
+</mask>
+<g mask="url(#mask0_5765_33165)">
+<rect x="-13.1094" y="-12.2021" width="50.4196" height="50.4043" fill="white"/>
+<mask id="mask1_5765_33165" style={{ maskType: 'luminance' }} maskUnits="userSpaceOnUse" x="-14" y="-13" width="52" height="52">
+<rect x="-13.1094" y="-12.2021" width="50.4196" height="50.4043" fill="white"/>
+</mask>
+<g mask="url(#mask1_5765_33165)">
+</g>
+</g>
+</svg>
+  );
+};
+
 export {
   IconCheckedCircle,
   IconDollor,
@@ -586,5 +622,7 @@ export {
   IconSecurePayment,
   IconAvalanche,
   IconSuitcase,
-  IconCoffeeCup
+  IconCoffeeCup,
+  IconUsdt,
+  IconShieldCheck
 };

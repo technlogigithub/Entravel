@@ -19,9 +19,12 @@ import { Separator } from "@radix-ui/react-dropdown-menu";
 import { Link } from "react-router-dom";
 import { Button } from "../ui/button";
 import { IconCopy, IconInfoCircleFilled } from "@tabler/icons-react";
+import ReadMore from "../shared/ReadMore";
 
+
+const bookingText = "Any cancellation received within 1 day prior to the arrival date will incur the first night's charge. Failure to arrive at your hotel or property will be"
 const PaymentOption = ({ onFinish }: { onFinish: () => void }) => {
-  const [selectedPayment, setSelectedPayment] = useState("creditCard");
+  const [selectedPayment, setSelectedPayment] = useState("crypto");
   const [selectedCrypto, setSelectedCrypto] = useState<{
     value: string;
     icon: string;
@@ -182,7 +185,7 @@ const PaymentOption = ({ onFinish }: { onFinish: () => void }) => {
               onChange={() => setSelectedPayment("crypto")}
               className="form-radio h-4 w-4 text-blue-600"
             />
-            <span className="font-semibold">Pay with crypto</span>
+            <span className="font-medium text-sm">Pay with crypto</span>
           </div>
           <div className="flex items-center space-x-2">
             <img src="/crypto.png" alt="crypto" className="h-5" />
@@ -213,7 +216,7 @@ const PaymentOption = ({ onFinish }: { onFinish: () => void }) => {
                   <AccordionTrigger>1. Choose cryptocurrency</AccordionTrigger>
                   <AccordionContent>
                     {!isCryptoSelected ? (
-                      <div className="grid grid-cols-2 gap-4 mt-1 mb-2">
+                      <div className="grid grid-cols-1 2xs:grid-cols-2 gap-4 mt-1 mb-2">
                         {options.map((option) => (
                           <CustomRadioOption
                             key={option.value}
@@ -253,7 +256,7 @@ const PaymentOption = ({ onFinish }: { onFinish: () => void }) => {
                   <AccordionTrigger>2. Select blockchain</AccordionTrigger>
                   <AccordionContent>
                     {!isBlockchainSelected ? (
-                      <div className="grid grid-cols-2 gap-4 mt-1 mb-2">
+                      <div className="grid grid-cols-1 2xs:grid-cols-2  gap-4 mt-1 mb-2">
                         {blockChainOptions.map((option) => (
                           <CustomRadioOption
                             key={option.value}
@@ -306,7 +309,7 @@ const PaymentOption = ({ onFinish }: { onFinish: () => void }) => {
                       </p>
                       <img src="/scanner.png" alt="scanner" className="w-40" />
                       <Separator className="w-full h-[1px] bg-input" />
-                      <p className="text-text text-base">
+                      <p className="text-text text-sm md:text-base">
                         Or copy details and pay with any wallet app
                       </p>
                       <div className="flex gap-7 bg-innerBg py-4 px-6 mt-1 mb-2">
@@ -358,7 +361,7 @@ const PaymentOption = ({ onFinish }: { onFinish: () => void }) => {
                         {copied && <p className="text-sm text-green-600">Copied to clipboard!</p>}
                       </div>
                       <Separator className="w-full h-[1px] bg-input" />
-                      <p className="text-base font-medium text-text">After completing the payment in your crypto wallet app, click the “Finish” button below to complete this booking:</p>
+                      <p className="text-sm md:text-base font-medium text-text">After completing the payment in your crypto wallet app, click the “Finish” button below to complete this booking:</p>
 
                       <Button size="lg" className="w-full rounded-xl" onClick={onFinish}>Finish, I have paid</Button>
                       <p className="flex gap-2 text-text text-xs">
@@ -372,7 +375,7 @@ const PaymentOption = ({ onFinish }: { onFinish: () => void }) => {
               <Separator className="w-full h-[1px] mt-3 mb-5 bg-input" />
               <div className="px-5 flex items-center gap-2 pb-4">
                 <IconSecurePayment />
-                <p className="text-sm font-medium text-text">
+                <p className="text-xs md:text-sm font-medium text-text">
                   <span className="text-green">Secure Payment</span> | All
                   information is fully secure
                 </p>
@@ -388,7 +391,7 @@ const PaymentOption = ({ onFinish }: { onFinish: () => void }) => {
           <h6 className="text-base font-medium pb-1 text-black">
             Cancellation Policy
           </h6>
-          <p className="text-sm text-black-secondary font-medium">
+          <p className="text-sm text-black-secondary font-normal md:font-medium">
             If you cancel between 06 February 2019 2:00:00 am(Europe/Kiev time)
             - 12 April 2019 3:00:00 am(Europe/Kiev time) there will be a
             cancellation fee $3,469.{" "}
@@ -398,14 +401,13 @@ const PaymentOption = ({ onFinish }: { onFinish: () => void }) => {
           <h6 className="text-base font-medium pb-1 text-black">
             Booking Remarks
           </h6>
-          <p className="text-sm text-black-secondary font-medium">
-            Any cancellation received within 1 day prior to the arrival date
-            will incur the first night's charge. Failure to arrive at your hotel
-            or property will be ...Show more{" "}
+          <p className="text-sm text-black-secondary font-normal md:font-medium">
+          <ReadMore text={bookingText} maxLength={150} />
+            
           </p>
         </div>
       </div>
-      <p className="text-sm">
+      <p className="text-sm font-normal md:font-medium">
         Your booking is with Central Park Hotel directly, and by completing this
         payment, you agree to the{" "}
         <Link to="/" className="underline text-blue">
