@@ -1,5 +1,5 @@
 import Booking from "@/components/BookingForm/Booking";
-import { IconGuarantee, IconKidsFriendly } from "@/components/iocns/Icons";
+import { IconGuarantee } from "@/components/iocns/Icons";
 import {
   Breadcrumb,
   BreadcrumbItem,
