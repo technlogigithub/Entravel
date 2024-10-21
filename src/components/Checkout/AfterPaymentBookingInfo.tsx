@@ -4,6 +4,8 @@ import { Separator } from "../ui/separator";
 import { IconCoffeeCup } from "../iocns/Icons";
 import { Badge } from "../ui/badge";
 import { IconStarFilled } from "@tabler/icons-react";
+import { bookingDetailsInfo } from "@/constantdata";
+import { cn } from "@/lib/utils";
 
 const AfterPaymentBookingInfo = () => {
   return (
@@ -61,28 +63,14 @@ const AfterPaymentBookingInfo = () => {
           </div>
 
           <div className="flex flex-col gap-5">
-            <div className="flex flex-col gap-2">
-              <h6 className="text-sm md:text-xs font-medium md:font-semibold text-text">1 Room:</h6>
-              <p className="text-base font-medium">Double Deluxe Room</p>
-            </div>
-            <div className="flex flex-col gap-2">
-              <h6 className="text-sm md:text-xs font-medium md:font-semibold text-text">Guests:</h6>
-              <p className="text-base font-medium">2 Adults + 2 Children</p>
-            </div>
-            <div className="flex flex-col gap-2">
-              <h6 className="text-sm md:text-xs font-medium md:font-semibold text-text">Child age(s):</h6>
-              <p className="text-base font-medium">3 years old, 5 years old</p>
-            </div>
-            <div className="flex flex-col gap-2">
-              <h6 className="text-sm md:text-xs font-medium md:font-semibold text-text">Meal plan:</h6>
-              <p className="text-base font-medium flex items-center gap-2">
-                <IconCoffeeCup /> Breakfast included{" "}
+            {bookingDetailsInfo.map((item) => (
+              <div className="flex flex-col gap-2" key={item.label}>
+              <h6 className="text-sm md:text-xs font-medium md:font-semibold text-text">{item.label}:</h6>
+              <p className={cn("text-base font-medium flex items-center gap-2", item.isGreenText ? "text-green" : "text-black")}>
+                {item.icon} {item.value}
               </p>
             </div>
-            <div className="flex flex-col gap-2">
-              <h6 className="text-sm md:text-xs font-medium md:font-semibold text-text">Booking type:</h6>
-              <p className="text-base font-medium text-green">Refundable</p>
-            </div>
+            ))}
           </div>
           <Separator className="w-full h-[1px] bg-input my-5" />
 

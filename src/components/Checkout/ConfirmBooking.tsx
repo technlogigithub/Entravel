@@ -1,15 +1,11 @@
-
-import {
-  IconAvalance,
-  IconSuitcase,
-  IconUsdt,
-} from "../iocns/Icons";
+import { IconAvalance, IconSuitcase, IconUsdt } from "../iocns/Icons";
 import { Button } from "../ui/button";
 import { IconBed, IconExclamationCircleFilled } from "@tabler/icons-react";
 import ReadMore from "../shared/ReadMore";
 import { FC } from "react";
 import CompletePaymentDialog from "./CompletePaymentDialog";
 import AfterPaymentBookingInfo from "./AfterPaymentBookingInfo";
+import { useNavigate } from "react-router-dom";
 interface GuestInfoProps {
   label: string;
   value: string;
@@ -21,10 +17,10 @@ interface paymentInfoProps {
   value: string;
   icon?: any;
 }
- interface ConfirmBookingProps {
-  isBookingConfirm: boolean,
-  onFinishPayment: () => void
- }
+interface ConfirmBookingProps {
+  isBookingConfirm: boolean;
+  onFinishPayment: () => void;
+}
 
 const guestsInfo: GuestInfoProps[] = [
   {
@@ -76,8 +72,15 @@ const cancelText =
 
 const bookingText =
   "Any cancellation received within 1 day prior to the arrival date will incur the first night's charge. Failure to arrive at your hotel or property will be";
-  
-const ConfirmBooking:FC<ConfirmBookingProps> = ({isBookingConfirm, onFinishPayment}) => {
+
+const ConfirmBooking: FC<ConfirmBookingProps> = ({
+  isBookingConfirm,
+  onFinishPayment,
+}) => {
+  const navigate = useNavigate();
+  const handleRedirectAdminPanel = () => {
+    navigate("/user-dashboard");
+  };
   return (
     <div className="lg:max-w-[1366px] mx-auto px-6 md:px-10 2xlg:px-12 py-8 flex gap-4 lg:gap-8 max-md:flex-wrap">
       {/* Left Panel Start */}
@@ -107,14 +110,15 @@ const ConfirmBooking:FC<ConfirmBookingProps> = ({isBookingConfirm, onFinishPayme
               Booking not completed
             </h4>
             <p className="text-[17px] text-red-dark font-medium pb-4">
-                Your booking is not completed due to insufficient payment
+              Your booking is not completed due to insufficient payment
             </p>
             <p className="text-sm leading-6 pb-6 md:pb-3">
-              Looks like you started the payment process, but didn't finish. Please complete your payment soon 
-              to secure your booking. If you need any assistance, our support team is here to help.
+              Looks like you started the payment process, but didn't finish.
+              Please complete your payment soon to secure your booking. If you
+              need any assistance, our support team is here to help.
             </p>
             <div className="flex gap-6 items-center flex-wrap max-lg:justify-center">
-              <CompletePaymentDialog onFinishPayment={onFinishPayment}/>
+              <CompletePaymentDialog onFinishPayment={onFinishPayment} />
               <Button variant="link" className="text-black hover:text-blue">
                 Contact support
               </Button>
@@ -122,9 +126,9 @@ const ConfirmBooking:FC<ConfirmBookingProps> = ({isBookingConfirm, onFinishPayme
           </div>
         )}
 
-<div className="md:hidden mb-5">
-        <AfterPaymentBookingInfo/>
-      </div>
+        <div className="md:hidden mb-5">
+          <AfterPaymentBookingInfo />
+        </div>
 
         {/* Guest Info */}
         <div className="px-5 md:px-6 pt-5 pb-7 border border-input rounded flex flex-col bg-white mb-5">
@@ -192,7 +196,11 @@ const ConfirmBooking:FC<ConfirmBookingProps> = ({isBookingConfirm, onFinishPayme
             ))}
           </div>
           <div className="mt-10">
-            <Button size="lg" className="inline-flex">
+            <Button
+              size="lg"
+              className="inline-flex"
+              onClick={handleRedirectAdminPanel}
+            >
               Manage booking
             </Button>
           </div>
@@ -201,7 +209,7 @@ const ConfirmBooking:FC<ConfirmBookingProps> = ({isBookingConfirm, onFinishPayme
       {/* Left Panel End */}
       {/* Right Panel Start*/}
       <div className="basis-full md:basis-1/2 lg:basis-[37%] max-md:hidden">
-        <AfterPaymentBookingInfo/>
+        <AfterPaymentBookingInfo />
       </div>
     </div>
   );

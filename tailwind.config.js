@@ -61,7 +61,8 @@ export default {
   			},
   			red: {
   				DEFAULT: 'hsl(var(--red))',
-  				dark: 'hsl(var(--red-dark))'
+  				dark: 'hsl(var(--red-dark))',
+				extradark: 'hsl(var(--red-extradark))'
   			},
   			headerBorder: {
   				DEFAULT: 'hsl(var(--gray-light))'

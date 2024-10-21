@@ -12,6 +12,8 @@ import SearchResults from './pages/searchresults.tsx'
 import SearchDetails from './pages/searchdetails.tsx'
 import Checkout from './pages/checkout.tsx'
 import BookingConfirmation from './pages/bookingconfirmation.tsx'
+import UserDashboard from './pages/userdashboard.tsx'
+import AdminBookingDetail from './pages/adminbookingdetail.tsx'
 
 const router = createBrowserRouter([
   {
@@ -53,6 +55,14 @@ const router = createBrowserRouter([
       {
         path:'/booking-confirmation',
         element: <BookingConfirmation />
+      },
+      {
+        path:'/user-dashboard',
+        element: <UserDashboard />
+      },
+      {
+        path:'/user-booking-detail',
+        element: <AdminBookingDetail />
       }
     ]
   },
