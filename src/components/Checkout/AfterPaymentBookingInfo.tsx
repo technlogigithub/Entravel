@@ -1,7 +1,6 @@
 
 import { Link } from "react-router-dom";
 import { Separator } from "../ui/separator";
-import { IconCoffeeCup } from "../iocns/Icons";
 import { Badge } from "../ui/badge";
 import { IconStarFilled } from "@tabler/icons-react";
 import { bookingDetailsInfo } from "@/constantdata";

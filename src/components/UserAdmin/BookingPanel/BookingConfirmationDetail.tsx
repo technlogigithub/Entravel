@@ -1,6 +1,5 @@
 import {
   IconAvalance,
-  IconCoffeeCup,
   IconUsdt,
 } from "@/components/iocns/Icons";
 import ReadMore from "@/components/shared/ReadMore";
