@@ -21,7 +21,7 @@ function App() {
       {/* Main content area */}
       <Outlet />
       {/* Render Footer only if not on login page */}
-      {!isLoginPage && <Footer />}
+      {!isLoginPage && <Footer isBlack={!isHomePage} />}
     </>
   );
 }

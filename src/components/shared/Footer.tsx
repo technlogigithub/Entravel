@@ -51,9 +51,9 @@ const socialLinks = [
         url: "/",
     }
 ]
-const Footer = ({isMobileHeader = true} : {isMobileHeader?: boolean}) => {
+const Footer = ({isMobileHeader = true, isBlack} : {isMobileHeader?: boolean, isBlack?: boolean}) => {
   return (
-    <div className={cn(isMobileHeader ? "px-6 md:px-12 py-12 md:py-20 bg-bgOne" : "p-0")}>
+    <div className={cn(isMobileHeader ? `px-6 md:px-12 py-12 md:py-20 ${isBlack ? "bg-white" : " bg-bgOne"}` : "p-0")}>
       <div className="flex justify-between max-md:flex-wrap">
         {isMobileHeader && (
             <div className="md:pr-4 max-md:mb-12">
