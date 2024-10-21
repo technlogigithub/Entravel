@@ -87,3 +87,43 @@ interface Facility {
     "Manhattan Bridge - 2.8 km / 1.7 mi",
     "5th Avenue - 2.9 km / 1.8 mi",
   ];
+
+
+
+  
+
+  // Hotel Facility Data
+  export const facilitiesData = {
+    "facilities": [
+      {
+        "icon": "IconWifi",
+        "title": "Internet",
+        "details": ["Free Wi-Fi in rooms", "Wi-Fi in public areas"]
+      },
+      {
+        "icon": "IconPool",
+        "title": "Swimming pool",
+        "details": ["Indoor pool", "Kids pool", "Outdoor pool", "Pool bar", "Salt water pool"]
+      },
+      {
+        "icon": "IconWellness",
+        "title": "Wellness Area",
+        "details": ["Jacuzzi", "Massage", "Sauna", "Solarium", "Steam Bath", "Turkish Bath", "Hamam", "Barber/Beauty Salon"]
+      },
+      {
+        "icon": "IconKids",
+        "title": "Kids Friendly",
+        "details": ["Babysitting service", "Child care", "Games room"]
+      },
+      {
+        "icon": "IconParking",
+        "title": "Parking",
+        "details": ["Car parking", "Garage"]
+      },
+      {
+        "icon": "IconFood",
+        "title": "Food & Drink",
+        "details": ["Cafe", "Pool bar", "Restaurant", "Breakfast in room all day", "Lobby Bar"]
+      }
+    ]
+  }

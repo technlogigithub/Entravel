@@ -1,5 +1,5 @@
 import Booking from "@/components/BookingForm/Booking";
-import { IconGuarantee } from "@/components/iocns/Icons";
+import { IconGuarantee, IconKidsFriendly } from "@/components/iocns/Icons";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -9,8 +9,18 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 import { Button } from "@/components/ui/button";
-import { IconHeart, IconMapPin, IconStarFilled } from "@tabler/icons-react";
-import { attractions, hotelLists } from "./SearchDetailsList";
+import {
+  IconBrandReddit,
+  IconGlass,
+  IconHeart,
+  IconMapPin,
+  IconParking,
+  IconPool,
+  IconStarFilled,
+  IconStethoscope,
+  IconWifi,
+} from "@tabler/icons-react";
+import { attractions, facilitiesData, hotelLists } from "./SearchDetailsList";
 import { cn } from "@/lib/utils";
 import Review from "@/components/shared/Review";
 import { Link, useNavigate } from "react-router-dom";
@@ -21,7 +31,27 @@ const SearchDetailComponent = () => {
   const navigate = useNavigate();
   const handleRedirectCheckout = () => {
     navigate("/checkout");
-  }
+  };
+
+  const getIcon = (iconName: string) => {
+    switch (iconName) {
+      case "IconWifi":
+        return <IconWifi className="w-7 h-7 text-green" />;
+      case "IconPool":
+        return <IconPool className="w-7 h-7 text-green" />;
+      case "IconWellness":
+        return <IconStethoscope className="w-7 h-7 text-green" />;
+      case "IconKids":
+        return <IconBrandReddit className="w-7 h-7 text-green" />;
+      case "IconParking":
+        return <IconParking className="w-7 h-7 text-green" />;
+      case "IconFood":
+        return <IconGlass className="w-7 h-7 text-green" />;
+      default:
+        return null;
+    }
+  };
+
   return (
     <div className="pt-6 max-w-[950px] mx-auto mb-0 px-6 md:px-10 lg:px-0">
       <Breadcrumb className="max-md:hidden">
@@ -325,7 +355,7 @@ const SearchDetailComponent = () => {
                   Hudson River Park.
                 </p>
               </div>
-              <div className="mb-9">
+              <div>
                 <h6 className="text-base">Attractions</h6>
                 <ul className="text-sm pl-4 pb-1">
                   {attractions.map((item: string) => (
@@ -335,6 +365,28 @@ const SearchDetailComponent = () => {
                   ))}
                 </ul>
               </div>
+            </div>
+          </div>
+
+          {/* Hotel Facility Section */}
+          <div className="flex gap-6 md:gap-20 border-t-2 border-dotted border-extraLight py-8 mt-8 max-sm:flex-wrap">
+            <div className="basis-full sm:basis-[180px]">
+              <h2 className="text-xl font-semibold">Hotel facilities</h2>
+            </div>
+            <div className="basis-full sm:basis-[calc(100%_-_180px)] grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-4 md:gap-y-8 auto-rows-min">
+              {facilitiesData.facilities.map((facility, index) => (
+                <div className="flex gap-3 mb-4 md:mb-10" key={index}>
+                  {getIcon(facility.icon)}
+                  <div>
+                    <h5 className="text-base font-medium">{facility.title}</h5>
+                    <ul className="text-sm font-normal flex flex-col gap-2 mt-2">
+                      {facility.details.map((detail: string, idx: number) => (
+                        <li key={idx}>{detail}</li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>

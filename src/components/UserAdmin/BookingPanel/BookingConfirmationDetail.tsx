@@ -79,6 +79,7 @@ const bookingText =
 
 const BookingConfirmationDetail = () => {
   const [copied, setCopied] = useState(false);
+  const [isCancelBookingDialogOpen, setIsCancelBookingDialogOpen] = useState(false);
   const copyToClipboard = (text: string) => {
     navigator.clipboard.writeText(text).then(
       () => {
@@ -90,7 +91,12 @@ const BookingConfirmationDetail = () => {
       }
     );
   };
+
+  const handleOpenCancelBookingDialog = () => {
+    setIsCancelBookingDialogOpen(true);
+  }
   return (
+    <>
     <div className="lg:max-w-[1366px] mx-auto px-6 md:px-10 2xlg:px-12 py-7 flex gap-4 lg:gap-8 max-md:flex-wrap">
       {/* Left Panel Start */}
       <div className="basis-full md:basis-[63%]">
@@ -345,9 +351,13 @@ const BookingConfirmationDetail = () => {
             </Link>
           </div>
         </div>
-       <CancelBookingDialog/>
+        <Button size="lg" className="w-full rounded-xl mt-6 bg-red-extradark" onClick={handleOpenCancelBookingDialog}>
+          Cancel Booking
+        </Button>
       </div>
     </div>
+    {isCancelBookingDialogOpen && <CancelBookingDialog open={isCancelBookingDialogOpen} setOpen={setIsCancelBookingDialogOpen}/>}
+    </>
   );
 };
 
