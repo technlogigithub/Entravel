@@ -54,7 +54,8 @@ export default {
   			green: {
   				DEFAULT: 'hsl(var(--green))',
 				"50": "hsl(var(--green-50))",
-				"100": "hsl(var(--green-100))"
+				"100": "hsl(var(--green-100))",
+				"300": "hsl(var(--green-300))"
   			},
   			yellow: {
   				DEFAULT: 'hsl(var(--yellow))'
@@ -104,7 +105,8 @@ export default {
   		backgroundImage: {
   			'hero-pattern': "url('/hero_img.jpg')",
   			'disocunt-bg': "url('/discount.jpg')",
-  			'disocunt-mobile-bg': "url('/mobile_saving.jpg')"
+  			'disocunt-mobile-bg': "url('/mobile_saving.jpg')",
+			'payment-bg': "url('/payment_ellisple.png')"
   		},
   		screens: {
   			'3xl': '1920px',

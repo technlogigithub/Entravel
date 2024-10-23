@@ -3,6 +3,7 @@ import BookingPanel from "./BookingPanel/BookingPanel";
 import Favourites from "./Favourites/Favourites";
 import PersonalInfo from "./PersonalInfo/PersonalInfo";
 import AccountSetting from "./AccountSetting/AccountSetting";
+import WalletBalance from "./WalletBalance/WalletBalance";
 
 const UserDashboardPanel = () => {
   return (
@@ -25,7 +26,7 @@ const UserDashboardPanel = () => {
           <Favourites/>
         </TabsContent>
         <TabsContent value="walletbalance">
-          fdsfdgd
+          <WalletBalance/>
         </TabsContent>
         <TabsContent value="personalinformation">
            <PersonalInfo/>

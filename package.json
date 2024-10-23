@@ -26,6 +26,7 @@
     "@tailwindcss/line-clamp": "^0.4.4",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
+    "echarts-for-react": "^3.0.2",
     "jquery": "^3.7.1",
     "lucide-react": "^0.447.0",
     "owl.carousel": "^2.3.4",

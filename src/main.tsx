@@ -14,6 +14,7 @@ import Checkout from './pages/checkout.tsx'
 import BookingConfirmation from './pages/bookingconfirmation.tsx'
 import UserDashboard from './pages/userdashboard.tsx'
 import AdminBookingDetail from './pages/adminbookingdetail.tsx'
+import AffiliateDashboard from './pages/affiliatedashboard.tsx'
 
 const router = createBrowserRouter([
   {
@@ -63,6 +64,10 @@ const router = createBrowserRouter([
       {
         path:'/user-booking-detail',
         element: <AdminBookingDetail />
+      },
+      {
+        path:'/affiliate-dashboard',
+        element: <AffiliateDashboard />
       }
     ]
   },

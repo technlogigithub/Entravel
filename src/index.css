@@ -56,7 +56,8 @@
     --text-extraLight:240, 8%, 50%, 1;
     --inner-bg:240, 9%, 98%, 1;
     --brown:32, 100%, 41%, 1;
-    --red-extradark:0, 100%, 37%, 1
+    --red-extradark:0, 100%, 37%, 1;
+    --green-300:83, 61%, 69%, 0.5
   }
  
 }
@@ -111,6 +112,9 @@
 }
 .shadow-five{
   box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.12);
+}
+.shadow-six{
+  box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.4);
 }
 .bg-overlay:before{
   @apply absolute top-0 left-0 right-0 bottom-0;
