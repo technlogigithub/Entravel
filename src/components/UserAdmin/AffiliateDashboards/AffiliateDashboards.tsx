@@ -1,5 +1,4 @@
-import { Button } from "@/components/ui/button"
-import { IconInfoCircleFilled } from "@tabler/icons-react"
+
 import ReactECharts from 'echarts-for-react';
 import ReferralLink from "./ReferralLink";
 import TotalCommisions from "./TotalCommisions";
