@@ -12,7 +12,7 @@ import { Button } from "@/components/ui/button";
 
 const PersonalInfo = () => {
   return (
-    <div className="flex flex-col lg:max-w-2xl justify-center max-xlg:mt-8 max-xlg:ml-0 max-xl:ml-10">
+    <div className="flex flex-col w-full md:w-[640px] justify-center max-xlg:mt-8  md:justify-self-center">
       <h2 className="text-lg font-medium pb-6 text-black">Personal Info</h2>
       <div className="bg-white px-3 py-4 md:p-8 border border-input rounded w-full">
         <h2 className="text-lg font-medium pb-5">Andrew Jons</h2>

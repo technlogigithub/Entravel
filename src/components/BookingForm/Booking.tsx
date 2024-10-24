@@ -92,7 +92,7 @@ const BookingItem: FC<BookingItemProps> = ({
     <>
       <div
         className={cn(
-          "md:flex gap-4 xl:gap-2 w-full max-lg:items-center",
+          "md:flex gap-4 xl:gap-2 w-full max-lg:items-center py-1",
           isInner && "items-center py-2"
         )}
       >
@@ -235,7 +235,7 @@ const BookingItem: FC<BookingItemProps> = ({
             "gap-2  h-auto min-h-auto rounded-xl  flex-shrink-0 max-md:h-16 max-lg:h-12 max-md:w-full max-md:mt-10",
             isInner
               ? "text-base py-3 px-6 font-medium"
-              : "text-lg md:text-base lg:text-lg px-4 lg:px-11 py-1 lg:py-5 lg:min-w-[181px]"
+              : "text-lg md:text-base lg:text-lg px-4 lg:px-7 py-1 lg:py-4 lg:min-w-[164px]"
           )}
           onClick={handleRedirectSearch}
         >

@@ -6,45 +6,52 @@ import UpcomingCommsions from "./UpcomingCommsions";
 import CommisonPaymentHistory from "./CommisonPaymentHistory";
 import HowItWorksDialog from "./HowItWorksDialog";
 
+const totalValue = 12; // This can be calculated dynamically if needed
+
 const option = {
-    tooltip: {
-      trigger: 'item'
-    },
-    legend: {
-      top: '-50%',
-      left: 'center'
-    },
-    series: [
-      {
-        name: 'Access From',
-        type: 'pie',
-        radius: ['60%', '90%'],
-        avoidLabelOverlap: false,
-        padAngle: 5,
-        itemStyle: {
-          borderRadius: 10
-        },
+  tooltip: {
+    trigger: 'item'
+  },
+  legend: {
+    top: '-50%',
+    left: 'center'
+  },
+  series: [
+    {
+      name: 'Access From',
+      type: 'pie',
+      radius: ['60%', '90%'],
+      avoidLabelOverlap: false,
+      padAngle: 5,
+      itemStyle: {
+        borderRadius: 10
+      },
+      label: {
+        show: true,
+        position: 'center',
+        formatter: () => `${totalValue}`, // Display the total in the center
+        fontSize:16,
+        fontWeight: 'bold',
+        color: '#000', // Customize the color
+      },
+      emphasis: {
         label: {
-          show: false,
-          position: 'center'
-        },
-        emphasis: {
-          label: {
-            show: true,
-            fontSize: 10,
-            fontWeight: 'bold'
-          }
-        },
-        labelLine: {
-          show: false
-        },
-        data: [
-          { value: 2, name: 'Direct' },
-          { value: 10, name: '2nd-Degree' },
-        ]
-      }
-    ]
-  };
+          show: true,
+          fontSize: 24,
+          fontWeight: 'bold'
+        }
+      },
+      labelLine: {
+        show: false
+      },
+      data: [
+        { value: 2, name: 'Direct' },
+        { value: 10, name: '2nd-Degree' },
+      ]
+    }
+  ]
+};
+
 const AffiliateDashboards = () => {
   return (
     <div className="pb-10">
@@ -75,7 +82,7 @@ const AffiliateDashboards = () => {
                     <ReactECharts option={option} className="-mt-10"/>
                 </div>
             </div>
-                <ReferralLink/>
+                <ReferralLink isNewGenerateLink={false}/>
         </div>
         <TotalCommisions/>
         <UpcomingCommsions/>

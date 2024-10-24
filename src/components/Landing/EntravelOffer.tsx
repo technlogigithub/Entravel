@@ -102,7 +102,7 @@ const EntravelOffer = () => {
             </p>
             <div className="flex">
               <h2 className="text-[90px] leading-none font-medium">5</h2>
-              <img src="/star.png" alt="star" className="w-[184px] h-[40px]" />
+              <img src="/star.png" alt="star" className="w-[175px] h-8" />
             </div>
           </div>
         </div>

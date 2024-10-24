@@ -11,7 +11,7 @@ const AccountSetting = () => {
     const [isdeleteOpen, setIsdeleteOpen] = useState(false);
   return (
     <>
-    <div className="flex flex-col lg:max-w-2xl justify-center max-xlg:mt-8 max-xlg:ml-0 max-xl:ml-10">
+    <div className="flex flex-col lg:max-w-2xl justify-center max-xlg:mt-8 max-xlg:ml-0 max-xl:ml-10 justify-self-center">
       <h2 className="text-lg font-medium pb-6 text-black">Account settings</h2>
       <div className="bg-white px-3 py-4 md:p-8 border border-input rounded w-full">
         <div>
@@ -55,7 +55,7 @@ const AccountSetting = () => {
             size="lg"
             className="w-full rounded-xl mt-3 border-black bg-transparent shadow-none text-black"
           >
-            Save changes
+            Reset your password
           </Button>
 
           <Separator className="my-8" />
