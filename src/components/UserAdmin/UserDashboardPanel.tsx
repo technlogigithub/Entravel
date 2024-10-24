@@ -10,7 +10,7 @@ const UserDashboardPanel = () => {
 
       <Tabs defaultValue="bookings" className="md:flex xl:gap-20 max-xlg:flex-wrap">
       <div className='basis-full xlg:basis-44 xl:basis-64 flex-shrink-0 max-xlg:w-full'>
-        <TabsList className="h-auto flex-wrap max-xlg:bg-white max-xlg:shadow-two max-md:-mx-6 max-xlg:-mx-10 max-xlg:flex max-md:px-6 max-xlg:px-10 rounded-none">
+        <TabsList className="h-auto flex-wrap max-xlg:bg-white max-xlg:shadow-two max-md:-mx-6 max-xlg:-mx-10 max-xlg:flex max-md:px-6 max-xlg:px-10 rounded-none border-none">
           <TabsTrigger value="bookings" className="xlg:w-full justify-start max-md:p-2 md:py-3.5">Bookings</TabsTrigger>
           <TabsTrigger value="favourites" className="xlg:w-full justify-start max-md:p-2 md:py-3.5">Favourites</TabsTrigger>
           <TabsTrigger value="walletbalance" className="xlg:w-full justify-start max-md:p-2 md:py-3.5">Wallet balance</TabsTrigger>

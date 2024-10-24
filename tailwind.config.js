@@ -97,6 +97,7 @@ export default {
   			textExtraLight: 'hsl(var(--text-extraLight))',
   			innerBg: 'hsl(var(--inner-bg))',
 			brown: 'hsl(var(--brown))',
+			orangeLight: 'hsl(var(--orange-light))',
   		},
   		fontFamily: {
   			dmsans: ["DM Sans", "sans-serif"],

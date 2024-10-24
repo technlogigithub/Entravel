@@ -174,14 +174,15 @@ const IconPolygon = () => {
     
   );
 };
-const IconEthereum = () => {
+const IconEthereum:FC<IconProps> = ({ className="w-6 h-6", ...props }) => {
   return (
     <svg
-      width="24"
-      height="23"
-      viewBox="0 0 24 23"
+      
+      viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      className={className}
+      {...props}
     >
       <path
         d="M12.13 22.8097C18.3872 22.8097 23.4596 17.7372 23.4596 11.4801C23.4596 5.22285 18.3872 0.150391 12.13 0.150391C5.87275 0.150391 0.800293 5.22285 0.800293 11.4801C0.800293 17.7372 5.87275 22.8097 12.13 22.8097Z"
