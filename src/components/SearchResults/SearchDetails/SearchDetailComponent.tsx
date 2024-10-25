@@ -53,7 +53,7 @@ const SearchDetailComponent = () => {
   };
 
   return (
-    <div className="pt-6 max-w-[950px] mx-auto mb-0 px-6 md:px-10 lg:px-0">
+    <div className="pt-0 md:pt-6 max-w-[950px] mx-auto mb-0 px-6 md:px-10 lg:px-0">
       <Breadcrumb className="max-md:hidden">
         <BreadcrumbList>
           <BreadcrumbItem>
@@ -71,6 +71,9 @@ const SearchDetailComponent = () => {
           </BreadcrumbItem>
         </BreadcrumbList>
       </Breadcrumb>
+      <div className="shadow-five px-6 py-0 bg-white border border-gray-100 md:hidden relative mb-6 -mx-6">
+        <Booking isInner={true} />
+      </div>
       {/* Top Image */}
       <div className="flex gap-1 sm:gap-2  md:mt-5 mb-6 max-sm:flex-wrap">
         <div className="basis-full sm:basis-1/2 lg:basis-3/5 relative">
@@ -129,9 +132,16 @@ const SearchDetailComponent = () => {
               />
             ))}
           </div>
-          <h4 className="text-xl sm:text-[26px] font-medium sm:font-semibold pb-2">
-            Wyndham Garden Brooklyn Sunset Park
-          </h4>
+          <div className="flex gap-4 mb-2 items-center">
+            <h4 className="text-xl sm:text-[26px] font-medium sm:font-semibold">
+              Wyndham Garden Brooklyn Sunset Park
+            </h4>
+            <div className="flex justify-end mt-0.5 font-semibold h-auto">
+              <p className="text-sm bg-primary text-white py-1 px-3 rounded-full uppercase">
+                -20% off
+              </p>
+            </div>
+          </div>
           <p className="text-sm text-textExtraLight flex gap-1 items-center">
             <IconMapPin className="text-textExtraLight opacity-50 max-sm:hidden" />{" "}
             55 Church Street, Financial District, New York (NY), United States
@@ -144,7 +154,7 @@ const SearchDetailComponent = () => {
       {/* Form Start */}
       <div className="mb-5 md:mb-11">
         <h4 className="text-xl mb-5">Availability</h4>
-        <div className="shadow-five px-6 py-2 rounded-full bg-white border border-gray-100 max-md:hidden">
+        <div className="shadow-five px-6 py-0 rounded-full bg-white border border-gray-100 max-md:hidden relative">
           <Booking isInner={true} />
         </div>
       </div>

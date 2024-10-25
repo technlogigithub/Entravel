@@ -5,7 +5,7 @@ import SearchResultList from "@/components/SearchResults/SearchResultList/Search
 const SearchResults = () => {
   return (
     <div className="pt-16 md:pt-20 bg-white min-h-[calc(100vh_-_266px)]">
-      <div className="px-6 md:px-10 2xlg:px-20 shadow-four">
+      <div className="px-6 md:px-10 2xlg:px-20 shadow-four relative">
         <Booking isInner={true} />
       </div>
       <div className="flex gap-9 py-4 md:py-9 px-6 md:px-10 2xlg:px-20 max-2xlg:flex-wrap">

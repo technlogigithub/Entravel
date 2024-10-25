@@ -112,23 +112,23 @@ const BookingItem: FC<BookingItemProps> = ({
                 {locationSearch}
               </Button>
               {isDropdown && (
-                <div className="absolute left-6 -bottom-7 z-10 size-0 border-x-[10px] border-b-[10px] border-transparent border-b-white"></div>
+                <div className={cn("absolute left-6 z-10 size-0 border-x-[10px] border-b-[10px] border-transparent border-b-gray md:border-b-white", isInner ? " -bottom-5" :"-bottom-5 md:-bottom-7")}></div>
               )}
             </div>
             {isDropdown && (
-              <div className="p-5 bg-white shadow-sm absolute top-[92px] lg:top-24 left-10 rounded-md w-[500px] z-30">
+              <div className={cn("p-5 bg-white shadow-sm absolute  left-1 md:left-10 rounded-md w-[300px] md:w-[500px] z-30", isInner ? "top-[114px] md:top-[88px]"  : "top-[92px] lg:top-24")}>
                 {Object.entries(destinationOptions).map(
                   ([key, value], index, array) => (
                     <div key={key}>
-                      <h6 className="uppercase text-gray-500 text-xs">{key}</h6>{" "}
+                      <h6 className="uppercase text-gray-500 text-xs text-left">{key}</h6>{" "}
                       {/* Category Title */}
                       <ul className="mt-1.5">
                         {value.items.map((item) => (
-                          <li key={item.name}>
+                          <li key={item.name} className="text-left">
                             <Button
                               variant="link"
                               onClick={() => handleOptionClick(item.name)}
-                              className="group px-0 pt-2 h-auto min-h-auto pb-0 text-base flex-col text-left items-start text-primary hover:text-blue"
+                              className="group px-0 pt-2 h-auto min-h-auto pb-0 text-base flex-col text-left items-start text-primary hover:text-blue justify-start"
                             >
                               {/* Conditionally render title */}
                               {item.title && (
@@ -138,7 +138,7 @@ const BookingItem: FC<BookingItemProps> = ({
                               )}
                               <p
                                 className={cn(
-                                  item.title &&
+                                  "whitespace-normal", item.title &&
                                     "font-normal mb-3 group:hover:text-blue"
                                 )}
                               >
@@ -218,11 +218,11 @@ const BookingItem: FC<BookingItemProps> = ({
                 {guestSearch}
               </Button>
               {isGuestDropdown && (
-                <div className="absolute left-6 -bottom-7 z-10 size-0 border-x-[10px] border-b-[10px] border-transparent border-b-white"></div>
+                <div className={cn("absolute left-6 z-10 size-0 border-x-[10px] border-b-[10px] border-transparent border-b-gray md:border-b-white",  isInner ? " -bottom-5" :"-bottom-3 md:-bottom-7")}></div>
               )}
             </div>
             {isGuestDropdown && (
-              <div className="p-5 bg-white shadow-sm absolute top-[92px] lg:top-24 left-auto rounded-md w-[300px] z-30">
+              <div className={cn("p-5 bg-white shadow-sm absolute  left-auto rounded-md w-[300px] z-30", isInner ? "top-[284px] md:top-[88px]"  : "max-md:-bottom-[106px] md:top-[92px] lg:top-24")}>
                 <GuestSelector />
               </div>
             )}
