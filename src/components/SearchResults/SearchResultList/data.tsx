@@ -18,7 +18,8 @@ interface resultItemsProps {
     originalPrice: number,
     offerPrice: number,
     totalPrice: number,
-    days: number
+    days: number,
+    isBlur?: boolean
 }
 export const resultItems: resultItemsProps[] = [
     {
@@ -50,7 +51,7 @@ export const resultItems: resultItemsProps[] = [
         originalPrice:426,
         offerPrice:242,
         totalPrice:762,
-        days:3
+        days:3,
     },
     {
         propertyImages:[
@@ -110,7 +111,8 @@ export const resultItems: resultItemsProps[] = [
         originalPrice:326,
         offerPrice:142,
         totalPrice:562,
-        days:2
+        days:2,
+        isBlur:true
     },
     {
         propertyImages:[

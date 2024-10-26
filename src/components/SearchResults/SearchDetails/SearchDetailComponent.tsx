@@ -228,8 +228,8 @@ const SearchDetailComponent = () => {
                       </p>
                       <ul className="grid gap-2 grid-cols-2 text-black">
                         {amenitie.facilities?.map((facility, facilityIndex) => (
-                          <li className="flex gap-2" key={facilityIndex}>
-                            <p className="min-w-6">{facility.icon}</p>
+                          <li className="flex gap-1 md:gap-2" key={facilityIndex}>
+                            <p className="min-w-5 md:min-w-6">{facility.icon}</p>
                             <p className="text-sm font-normal">
                               {facility.label}
                             </p>
@@ -270,7 +270,8 @@ const SearchDetailComponent = () => {
                       <ul className="flex gap-2 flex-col">
                         {amenitie.facilities?.map((facility, facilityIndex) => (
                           <li className="flex gap-2" key={facilityIndex}>
-                            <p className="text-sm font-normal">
+                            <p className="min-w-5">{facility.icon}</p>
+                            <p className="text-sm font-normal flex items-center gap-2">
                               {facility.label}
                             </p>
                           </li>

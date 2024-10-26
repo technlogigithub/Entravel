@@ -1,4 +1,4 @@
-import { IconPolygon, IconUstd, IconWhiteDollor, IconEthereum, IconBNBChain, IconOptimism, IconAvalance, IconArbitrum, IconTRON, IconTON } from "@/components/iocns/Icons"
+import { IconPolygon, IconEthereum, IconBNBChain, IconOptimism, IconAvalance, IconArbitrum, IconTRON, IconTON } from "@/components/iocns/Icons"
 
 export const bookingFeatureItem = [
   {
@@ -25,59 +25,40 @@ export const bookingFeatureItem = [
   }
 ]
 
-export const platformBlackName = [
-  {
-    id:1,
-    title:"USDC",
-    icon:<IconWhiteDollor/>
-  },
-  {
-    id:2,
-    title:"USDT",
-    icon:<IconUstd/>
-  }
-]
 
 export const platformName = [
   {
     id:1,
-    title:"Polygon",
-    icon:<IconPolygon/>
+    icon:<IconPolygon className="size-9"/>
   },
   {
     id:2,
-    title:"Ethereum",
-    icon:<IconEthereum/>
+    icon:<IconEthereum className="size-9"/>
   },
   {
     id:3,
-    title:"BNB Chain",
-    icon:<IconBNBChain/>
+    icon:<IconBNBChain className="size-9"/>
   },
   {
     id:4,
-    title:"Optimism",
-    icon:<IconOptimism/>
+    icon:<IconOptimism className="size-9"/>
   },
+ 
   {
     id:5,
-    title:"Avalance",
-    icon:<IconAvalance/>
+    icon:<IconArbitrum className="size-9"/>
   },
   {
     id:6,
-    title:"Arbitrum",
-    icon:<IconArbitrum/>
+    icon:<IconTRON className="size-9"/>
   },
   {
     id:7,
-    title:"TRON",
-    icon:<IconTRON/>
+    icon:<IconTON className="size-9"/>
   },
   {
     id:8,
-    title:"TON",
-    icon:<IconTON/>
-  }
+    icon:<IconAvalance className="size-9"/>
+  },
 ]
   

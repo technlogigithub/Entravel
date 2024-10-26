@@ -21,6 +21,12 @@ import ResultSkelton from "@/components/Skelton/ResultSkelton";
 import { Drawer, DrawerContent } from "@/components/ui/drawer";
 import Filter from "../Filters/Filter";
 import { Link } from "react-router-dom";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 const sortMenuList = [
   {
@@ -243,9 +249,20 @@ const SearchResultList = () => {
                   </ul>
                   <div className="text-right">
                     <div className="flex gap-2">
-                      <h4 className="text-2xl text-disabled font-medium">
-                        <s>${item.originalPrice}</s>
-                      </h4>
+                      <TooltipProvider>
+                        <Tooltip>
+                          <TooltipTrigger asChild>
+                            <h4 className="text-2xl text-disabled font-medium">
+                              <s>{item.isBlur ? "$$$" : `$${item.originalPrice}`}</s>
+                            </h4>
+                          </TooltipTrigger>
+                          <TooltipContent className="max-w-44">
+                            <p className="text-[11px] font-normal text-white">
+                              {item.isBlur ? "We do not have the market price for this hotel, but we are cheaper than all other platforms. You are welcome to compare" : "Market price, calculated based on the hotel price on other booking platformsy"}</p>
+                          </TooltipContent>
+                        </Tooltip>
+                      </TooltipProvider>
+                      
                       <h4 className="text-[26px] font-semibold text-green">
                         ${item.offerPrice}
                       </h4>

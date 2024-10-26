@@ -13,7 +13,7 @@ const EfforlessBooking = () => {
           Effortless booking, <br />
           exclusive savings
         </h3>
-        <p className="font-18 text-black max-w-[507px] justify-self-end !font-normal">
+        <p className="font-18 text-black md:max-w-[507px] md:justify-self-end !font-normal">
           Enjoy unbeatable hotel booking deals with Entravel - where{" "}
           <span className="font-semibold">invitation-only membership</span>{" "}
           unlocks a world of privileges.

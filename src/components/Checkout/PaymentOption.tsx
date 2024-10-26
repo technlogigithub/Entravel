@@ -139,7 +139,7 @@ const PaymentOption = ({ onFinish }: { onFinish: () => void }) => {
           </div>
           <div className="flex items-center space-x-2">
             <img src="/visa.png" alt="Visa" className="h-5" />
-            <img src="/master.png" alt="Mastercard" className="h-5" />
+            <img src="/mastercard.png" alt="Mastercard" className="h-5" />
           </div>
         </label>
 
