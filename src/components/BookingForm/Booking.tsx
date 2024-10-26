@@ -188,9 +188,9 @@ const BookingItem: FC<BookingItemProps> = ({
                   )}
                 </Button>
               </PopoverTrigger>
-              <PopoverContent className="w-auto p-0" align="start">
+              <PopoverContent className="w-auto p-0 max-sm:max-h-[300px] max-sm:overflow-y-auto" align="start">
                 <Calendar
-                  // initialFocus
+                  initialFocus
                   mode="range"
                   defaultMonth={date?.from}
                   selected={date}

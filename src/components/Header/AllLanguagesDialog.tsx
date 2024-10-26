@@ -20,7 +20,7 @@ const AllLanguagesDialog = ({isBlack}: {isBlack?: boolean}) => {
     <div>
       <Dialog>
         <DialogTrigger asChild>
-          <Button variant="link" className={cn("gap-2.5 text-black px-0", isBlack && "text-white")}>
+          <Button variant="link" className={cn("gap-2.5 text-black px-0", isBlack && "text-white hover:text-gray-500")}>
             <GlobeIcon className="w-4 h-4" />
             English
           </Button>

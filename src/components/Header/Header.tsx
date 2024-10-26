@@ -142,7 +142,7 @@ const Header: FC<HeaderProps> = ({ isAuthenticated, isBlack = true }) => {
           <li>
             <Button
               variant="link"
-              className={cn("px-0 text-black", isBlack && "text-white")}
+              className={cn("px-0 text-black", isBlack && "text-white hover:text-gray-500 ")}
             >
               Blog
             </Button>
@@ -168,7 +168,7 @@ const Header: FC<HeaderProps> = ({ isAuthenticated, isBlack = true }) => {
                 to="/login"
                 className={cn(
                   "uppercase font-semibold text-black hover:text-blue inline-flex pt-[3px]",
-                  isBlack && "text-white"
+                  isBlack && "text-white hover:!text-gray-500"
                 )}
               >
                 Sign in
