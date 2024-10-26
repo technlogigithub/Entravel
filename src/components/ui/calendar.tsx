@@ -1,5 +1,5 @@
 import * as React from "react"
-// import { ChevronLeftIcon, ChevronRightIcon } from "@radix-ui/react-icons"
+import { ChevronLeftIcon, ChevronRightIcon } from "@radix-ui/react-icons"
 import { DayPicker } from "react-day-picker"
 
 import { cn } from "@/lib/utils"
@@ -47,7 +47,7 @@ function Calendar({
         day_range_start: "day-range-start",
         day_range_end: "day-range-end",
         day_selected:
-          "bg-primary text-white hover:bg-primary hover:text-white focus:bg-primary focus:text-white",
+          "bg-primary text-white hover:bg-primary hover:text-primary-foreground focus:bg-primary focus:text-white",
         day_today: "bg-accent text-accent-foreground",
         day_outside:
           "day-outside text-muted-foreground opacity-50  aria-selected:bg-accent/50 aria-selected:text-muted-foreground aria-selected:opacity-30",
@@ -58,8 +58,8 @@ function Calendar({
         ...classNames,
       }}
       components={{
-        // IconLeft: () => <ChevronLeftIcon className="h-4 w-4" />,
-        // IconRight: () => <ChevronRightIcon className="h-4 w-4" />,
+        IconLeft: () => <ChevronLeftIcon className="h-4 w-4" />,
+        IconRight: () => <ChevronRightIcon className="h-4 w-4" />,
       }}
       {...props}
     />
