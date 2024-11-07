@@ -79,7 +79,7 @@ const ConfirmBooking: FC<ConfirmBookingProps> = ({
 }) => {
   const navigate = useNavigate();
   const handleRedirectAdminPanel = () => {
-    navigate("/user-dashboard");
+    navigate("/user-booking-details");
   };
   return (
     <div className="lg:max-w-[1366px] mx-auto px-6 md:px-10 2xlg:px-12 py-8 flex gap-4 lg:gap-8 max-md:flex-wrap">

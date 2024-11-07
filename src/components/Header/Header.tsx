@@ -33,27 +33,27 @@ const AccountMenu = ({ isOpenMenu }: { isOpenMenu: boolean }) => {
     <>
       <ul className="flex flex-col gap-5 px-2 pb-2">
         <li>
-          <Link to="/bookings" className="hover:text-blue">
+          <Link to="/user-booking-details" className="hover:text-blue">
             Bookings
           </Link>
         </li>
         <li>
-          <Link to="/favourites" className="hover:text-blue">
+          <Link to="/user-favourites" className="hover:text-blue">
             Favourites
           </Link>
         </li>
         <li>
-          <Link to="/walletbalance" className="hover:text-blue">
+          <Link to="/user-wallet-balance" className="hover:text-blue">
             Wallet balance
           </Link>
         </li>
         <li>
-          <Link to="/personalinformation" className="hover:text-blue">
+          <Link to="/user-personal-information" className="hover:text-blue">
             Personal information
           </Link>
         </li>
         <li>
-          <Link to="/accountsettings" className="hover:text-blue">
+          <Link to="/user-account-settings" className="hover:text-blue">
             Account settings
           </Link>
         </li>
@@ -61,7 +61,7 @@ const AccountMenu = ({ isOpenMenu }: { isOpenMenu: boolean }) => {
       <DropdownMenuSeparator className={cn(isOpenMenu && "mx-0")} />
       <ul className="px-2 py-2">
         <li>
-          <Link to="/affiliatedashboard" className="hover:text-blue">
+          <Link to="/affiliate-dashboard" className="hover:text-blue">
             {" "}
             Affiliate dashboard
           </Link>

@@ -15,6 +15,11 @@ import BookingConfirmation from './pages/bookingconfirmation.tsx'
 import UserDashboard from './pages/userdashboard.tsx'
 import AdminBookingDetail from './pages/adminbookingdetail.tsx'
 import AffiliateDashboard from './pages/affiliatedashboard.tsx'
+import UserBookingDetails from './pages/userbookingdetails.tsx'
+import UserFavourites from './pages/userfavourites.tsx'
+import UserWalletBalance from './pages/userwalletbalance.tsx'
+import UserPersonalInformation from './pages/userpersonalinformation.tsx'
+import UserAccountSettings from './pages/useraccountsettings.tsx'
 
 const router = createBrowserRouter([
   {
@@ -68,6 +73,26 @@ const router = createBrowserRouter([
       {
         path:'/affiliate-dashboard',
         element: <AffiliateDashboard />
+      },
+      {
+        path:'/user-booking-details',
+        element: <UserBookingDetails/>
+      },
+      {
+        path:'/user-favourites',
+        element: <UserFavourites/>
+      },
+      {
+        path:'/user-wallet-balance',
+        element: <UserWalletBalance/>
+      },
+      {
+        path:'/user-personal-information',
+        element: <UserPersonalInformation/>
+      },
+      {
+        path:'/user-account-settings',
+        element: <UserAccountSettings/>
       }
     ]
   },
