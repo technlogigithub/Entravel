@@ -1,10 +1,4 @@
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import BookingPanel from "./BookingPanel/BookingPanel";
-import Favourites from "./Favourites/Favourites";
-import PersonalInfo from "./PersonalInfo/PersonalInfo";
-import AccountSetting from "./AccountSetting/AccountSetting";
-import WalletBalance from "./WalletBalance/WalletBalance";
-import { Link } from "react-router-dom";
+import { Tabs, } from "@/components/ui/tabs";
 
 const UserDashboardPanel = () => {
   return (
